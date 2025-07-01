@@ -1,22 +1,22 @@
-# ComDash  
-# <img width ="30" height="30" src="https://user-images.githubusercontent.com/69076784/236990283-83859a95-c9fa-4d2a-8729-4afb3900789d.png"> + <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src=https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1>
+# NexaView <img width ="30" height="30" src="https://user-images.githubusercontent.com/69076784/236990283-83859a95-c9fa-4d2a-8729-4afb3900789d.png">
+
+# Built using: <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src=https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1>
 
 ###### An All In One Web based Dashboard For News, Weathers and More...
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Epicalable/ComDash) [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Epicalable/ComDash) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Epicalable/ComDash/issues)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Temavrix/NexaView) [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Temavrix/NexaView) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Temavrix/NexaView/issues)
 
 **This Program Is CPU-Intensive Please Make Sure That You're Using A Mid To High Range PC.**
 
-ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgrading of Infrasturcture and Services) for users wishing to go back to the Vanilla Js version head to: [Commit 0b9d90](https://github.com/Epicalable/ComDash/tree/0b9d90cb93b83920100099202fe27f8b99fd7efa)
+ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgrading of Infrasturcture and Services) for users wishing to go back to the Vanilla Js version head to: [Commit 0b9d90](https://github.com/Temavrix/NexaView/tree/0b9d90cb93b83920100099202fe27f8b99fd7efa)
  
 <img width="250" src="https://github.com/user-attachments/assets/1cf8f51c-04bb-4969-8a1a-42e6766288bf"> <img width="250" src="https://github.com/user-attachments/assets/d3f74745-3b2a-4238-afcb-fe8bb3991094"> <img width="250" src="https://github.com/user-attachments/assets/60901731-8ed1-49cc-af7b-95c5feefb1e2">
 
 
 ## Table Of Contents
 - [What's New?](#whats-new)
-- [Introduction to ComDash](#introducing-comdash)
-- [Running ComDash On Your Computer](#running-comdash-on-your-local-computer)
-- [Running ComDash](#running-comdash-on-your-local-computer)
+- [Introduction to NexaView](#introducing-nexaview)
+- [Running NexaView On Your Computer](#running-nexaview-on-your-local-computer)
 - [What APIs Should I Subscribe To?](#what-apis-should-i-subscribe-to)
    * [Where Do I Paste The APIs?](#where-do-i-paste-the-apis)
 - [How Firebase Handles Your Data?](#how-your-data-is-handled-with-firebase)
@@ -27,18 +27,19 @@ ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgra
 
 
 ## What's New?
-Here at Epicalable we are committed in keeping ComDash up-to-date and up-to-speed with the growing tech solutions, services and algorithms. Hence this new commit includes:
+Here at Temavrix we are committed in keeping NexaView up-to-date and up-to-speed with the growing tech solutions, services and algorithms. Hence this new commit includes:
 
 
 ```
-ComDash Updates In This Commit:-
-Update Highlights:-
-1. HUGE UPDATE: Our entire codebase has been re-written with React Js and TailwindCSS 
-   for the frontend and FireBase as the backend database in-line with Project-WrapSpeed 
-   and React Js will be supported till the forseeable future.
-2. ENTIRE CSS codebase has been modified by implementing TailwindCSS.
-3. The use of localstorage to store info has been depreciated, Going forward all info 
-   requests will be directed and handled with Firebase.
+NexaView Changelogs:-
+1. Announcement: Going forward ComDash will been renamed to NexaView
+   as part of our larger rebranding initiative.
+2. Project's Future: Our Resources at Temavrix are diverted to other new
+   projects so NexaView will be recieving updates less often.
+3. Mobile Support: Our Team at Temavrix will continue to work on the 
+   mobile application development of this project as the foundation 
+   has been set in our current codebase.
+4. Bug fixes, code improvements and logo has been changed on tab icons.
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -47,20 +48,20 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 20-April-2025 16:50 HRS (Singapore Standard Time)
-Publisher: Epicalable
+Last Updated: 01-July-2025 16:35 HRS (Singapore Standard Time)
+Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
 
 
-## Introducing ComDash
-Comdash is an all-in-one web-based Dashboard to get essential day-to-day information such as current weather, weather forecast, global news headlines and store To-do tasks for users. This product is built primarily using React JS as the frontend framework and Firebase as the backend database to store and retrieve user's information. 
+## Introducing NexaView
+NexaView is an all-in-one web-based Dashboard to get essential day-to-day information such as current weather, weather forecast, global news headlines and store To-do tasks for users. This product is built primarily using React JS as the frontend framework and Firebase as the backend database to store and retrieve user's information. 
 
 
-## Running ComDash On Your Local Computer
-ComDash can be exectued on you localhost by installing node.js and after initializing npm, Head to pages sub-folder 
+## Running NexaView On Your Local Computer
+NexaView can be exectued on you localhost by installing node.js and after initializing npm, Head to pages sub-folder 
 ```
->>> cd ComDash
+>>> cd NexaView
 ```
 Then run the following command in you command line to start your localhost server.
 ```
@@ -86,13 +87,13 @@ Upon opening, by default you can track your To-Do tasks so it is best to activat
 
 To do that users will need to head to and register for the following API services :
 
-1. https://openweathermap.org/ : For ComDash to get current weather information and weather forecast for your city and display in WeatherCard.  
+1. https://openweathermap.org/ : For NexaView to get current weather information and weather forecast for your city and display in WeatherCard.  
    <img width="149" src="https://github.com/user-attachments/assets/bb66c0eb-d41f-442b-bc3c-59b7380638c6"> <img width="150" src="https://github.com/user-attachments/assets/9d827f8d-ae1b-41d4-8859-04867e3392de">
 
-2. https://gnews.io/ : For ComDash to get current news headlines for your country (chosen in the drop-down list) and display it for you in the NewsCard.   
+2. https://gnews.io/ : For NexaView to get current news headlines for your country (chosen in the drop-down list) and display it for you in the NewsCard.   
    <img width="150" src="https://github.com/user-attachments/assets/bf297798-f784-4cfc-a90c-13a5267fcc69"> <img width="150" src="https://github.com/user-attachments/assets/a5a57409-bdce-465c-9278-633869cfcabe"> 
 
-3. https://unsplash.com/developers : For ComDash to get a random background image which is based on your city.
+3. https://unsplash.com/developers : For NexaView to get a random background image which is based on your city.
 
    #### Where Do I Paste The APIs?
    <img width="200" src="https://github.com/user-attachments/assets/45bd5732-ae4a-447d-a390-b532d9d144c7">
@@ -101,7 +102,7 @@ To do that users will need to head to and register for the following API service
 
 
 ## How Your Data Is Handled With Firebase?
-In ComDash only your Api-keys and your To-Do tasks are saved in the database for easy retrieval. All these information are saved under the E-Mail address which is used for registering in the login page at the start.
+In NexaView only your Api-keys and your To-Do tasks are saved in the database for easy retrieval. All these information are saved under the E-Mail address which is used for registering in the login page at the start.
 
 <img width="250" src="https://github.com/user-attachments/assets/98e87416-f183-4b11-a7c0-af1fc56c5e22">
 
@@ -135,26 +136,26 @@ Once registered User's Apikeys in the settings page and To-Do list in the Taskca
 
 
 ## Other Functions Available
-Apart from APIs to retreive information ComDash also comes with some more functionalities for users to use:-
+Apart from APIs to retreive information NexaView also comes with some more functionalities for users to use:-
 1. Tasks-Tracker:  
-Comdash allows you to track tasks which will be stored in FireBase to prevent erasing the tasks if you exit or reloaad the page.  
+NexaView allows you to track tasks which will be stored in FireBase to prevent erasing the tasks if you exit or reloaad the page.  
    <img width="100" alt="tasks" src="https://github.com/user-attachments/assets/507d6884-4077-435c-a171-5bbdaa511c27">  
    
 2. Calender:  
-Comdash has an in-built calander which allows you to see what day and date it is.  
+NexaView has an in-built calander which allows you to see what day and date it is.  
    <img width="100" alt="calender" src="https://github.com/user-attachments/assets/8be73a88-4506-4e0f-9e1a-d332ce7d3b24">
 
 
 ## Issues
-As this project is still in constant development, if you run into any issues while operating or have any suggestions or features, please feel free to drop by our [issues](https://github.com/Epicalable/ComDash/issues) section and open a issue and we'll respond within 2-4 working days, Thank you for your understanding.
+As this project is still in constant development, if you run into any issues while operating or have any suggestions or features, please feel free to drop by our [issues](https://github.com/Temavrix/NexaView/issues) section and open a issue and we'll respond within 2-4 working days, Thank you for your understanding.
 
 
 ## License
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Epicalable/)  
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Temavrix/)  
 
-IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute ComDash are kindly advised to:
+IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute NexaView are kindly advised to:
 
-1. A reference to us by keeping a "(C) Epicalable" text in the 'Modified program'.
+1. A reference to us by keeping a "(C) Temavrix" text in the 'Modified program'.
 
 2. A link to this repository from the user's 'Modified program' README file. 
 
@@ -162,7 +163,7 @@ This will be helpful for us as users will know it's original source and about ou
 Please also refer to LICENSE file for clarifications.  
 Thank you for your kind co-operation :-)
 
-ComDash Copyright (C) Epicalable 2024  
+NexaView Copyright (C) Temavrix 2025  
 All Rights Reserved
 
-Version 3.2.7
+Version 3.3.0

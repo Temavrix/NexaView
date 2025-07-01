@@ -223,7 +223,7 @@ const DashBoard = () => {
                 </div>
                 <div className="absolute bottom-[2px] left-[5px]">
                     <div id="Setbutton">
-                        <a href="https://github.com/Epicalable/ComDash" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
+                        <a href="https://github.com/Temavrix/NexaView" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
                     </div>
                 </div>
           </div>

@@ -87,7 +87,7 @@ const Settings = () => {
                     </div>
                 </div>
                 <div className="absolute bottom-[2px] left-[8px]">
-                    <a href="https://github.com/Epicalable/ComDash" title="About Us">
+                    <a href="https://github.com/Temavrix/NexaView" title="About Us">
                         <img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236" alt="About Us Icon" />
                     </a>
                 </div>

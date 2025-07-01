@@ -30,12 +30,12 @@ export default function Auth({ onUser }) {
             </div>
             <div class="baraboutus">
                 <div id="Setbutton" className="absolute bottom-[2px] left-[8px]">
-                    <a href="https://github.com/Epicalable/ComDash" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
+                    <a href="https://github.com/Temavrix/NexaView" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
                 </div>
             </div>
       </div>
       <div id="auth-container" className="w-[90%] max-w-md mx-auto text-[2em] text-center min-h-[50vh] bg-black/10 backdrop-blur-[10px] shadow-md border border-white/20 rounded-[3em] p-6 sm:p-[3em] flex flex-col items-center justify-center" style={{backgroundColor: 'color here'}}>
-      <label className="text-white text-[30px] font-bold">Welcome To ComDash</label>
+      <label className="text-white text-[30px] font-bold">Welcome To NexaView</label>
       <h2 className="text-white text-[1.17em] font-bold">{isLogin ? 'Login' : 'Sign Up'}</h2>
       <form onSubmit={handleSubmit}>
         <label className="text-white text-[20px] font-normal">E-mail:  </label><br />
@@ -46,7 +46,8 @@ export default function Auth({ onUser }) {
       </form><br />
       <button className="border-none outline-none px-[1em] py-[0.6em] rounded-[24px] bg-white/40 text-white text-[45%] w-[200px] text-center" onClick={() => setIsLogin(!isLogin)}>
         Switch to {isLogin ? 'Sign Up' : 'Login'}
-      </button>
+      </button><br />
+      <label className="text-white text-[20px]">(C) Temavrix</label>
     </div>
     </div>
     
