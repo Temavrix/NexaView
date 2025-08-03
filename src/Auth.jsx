@@ -1,4 +1,3 @@
-// src/Auth.jsx
 import { useState } from 'react';
 import { auth } from './firebase.jsx';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
@@ -8,7 +7,6 @@ export default function Auth({ onUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,33 +21,41 @@ export default function Auth({ onUser }) {
   };
 
   return (
-    <div>
-      <div class="sidebar">
-            <div class="baricons">
-                <img className="relative h-[50px] w-[50px] left-[10px] -mt-7" src="https://github.com/user-attachments/assets/9380b62b-8486-4f1d-a3bf-821bf120147c" id="Comicon"/>
-            </div>
-            <div class="baraboutus">
-                <div id="Setbutton" className="absolute bottom-[2px] left-[8px]">
-                    <a href="https://github.com/Temavrix/NexaView" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
-                </div>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-black to-gray-900 text-white">
+      {/* Sidebar */}
+      <div className="fixed top-0 left-0 h-screen w-[70px] sm:w-[80px] bg-black/70 backdrop-blur-md z-50 flex flex-col items-center justify-between py-6">
+        <img className="h-[50px] w-[50px]" src="https://github.com/user-attachments/assets/9380b62b-8486-4f1d-a3bf-821bf120147c" alt="Icon"/>
+        <a href="https://github.com/Temavrix/NexaView" title="About Us">
+          <img className="h-[35px] w-[35px]" src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236" alt="About Us"/>
+        </a>
       </div>
-      <div id="auth-container" className="w-[90%] max-w-md mx-auto text-[2em] text-center min-h-[50vh] bg-black/10 backdrop-blur-[10px] shadow-md border border-white/20 rounded-[3em] p-6 sm:p-[3em] flex flex-col items-center justify-center" style={{backgroundColor: 'color here'}}>
-      <label className="text-white text-[30px] font-bold">Welcome To NexaView</label>
-      <h2 className="text-white text-[1.17em] font-bold">{isLogin ? 'Login' : 'Sign Up'}</h2>
-      <form onSubmit={handleSubmit}>
-        <label className="text-white text-[20px] font-normal">E-mail:  </label><br />
-        <input className="border-none outline-none px-[1em] py-[0.6em] rounded-[24px] bg-white/30 text-white text-[55%] w-[260px] text-center" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" /><br />
-        <label className="text-white text-[20px] font-normal">Password:  </label><br />
-        <input className="border-none outline-none px-[1em] py-[0.6em] rounded-[24px] bg-white/30 text-white text-[55%] w-[260px] text-center" type="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" /><br /><br />
-        <button className="border-none outline-none px-[1em] py-[0.6em] rounded-[24px] bg-white/40 text-white text-[45%] w-[200px] text-center" type="submit">{isLogin ? 'Login' : 'Sign Up'}</button>
-      </form><br />
-      <button className="border-none outline-none px-[1em] py-[0.6em] rounded-[24px] bg-white/40 text-white text-[45%] w-[200px] text-center" onClick={() => setIsLogin(!isLogin)}>
-        Switch to {isLogin ? 'Sign Up' : 'Login'}
-      </button><br />
-      <label className="text-white text-[20px]">(C) Temavrix</label>
+
+      {/* Main Content */}
+      <div className="ml-[40px] sm:ml-[80px] flex items-center justify-center min-h-screen p-4">
+        <div className="w-[100%] sm:w-full max-w-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 rounded-3xl p-8 sm:p-12 text-center">
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Welcome To NexaView</h1>
+          <h2 className="text-2xl sm:text-3xl font-semibold mb-8">{isLogin ? 'Login' : 'Sign Up'}</h2>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-white text-lg sm:text-xl mb-2">E-mail</label>
+              <input type="email" className="w-full px-5 py-3 rounded-full bg-white/30 text-white text-base sm:text-lg text-center outline-none" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" required />
+            </div>
+            <div>
+              <label className="block text-white text-lg sm:text-xl mb-2">Password</label>
+              <input type="password" className="w-full px-5 py-3 rounded-full bg-white/30 text-white text-base sm:text-lg text-center outline-none" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" required />
+            </div>
+            <button type="submit" className="w-full px-5 py-3 rounded-full bg-white/40 text-white text-lg font-semibold hover:bg-white/60 transition">
+              {isLogin ? 'Login' : 'Sign Up'}
+            </button>
+          </form>
+
+          <button onClick={() => setIsLogin(!isLogin)} className="mt-6 w-full px-5 py-3 rounded-full bg-white/30 text-white text-base hover:bg-white/50 transition">
+            Switch to {isLogin ? 'Sign Up' : 'Login'}
+          </button>
+
+          <p className="mt-8 text-white text-base opacity-60">(C) Temavrix</p>
+        </div>
+      </div>
     </div>
-    </div>
-    
   );
 }

@@ -17,18 +17,7 @@ body {
     display: flex;
 }
 
-.settings-box {
-    background: rgba(0, 0, 0, 0.30);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(11.5px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 4em;
-    border-radius: 50px;
-    width: 100%;
-    max-height: 510px;
-}
-
-.sidebar {
+.sidebarlogin {
     background: rgba(0, 0, 0, 0.30);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(11.5px);
@@ -40,7 +29,7 @@ body {
     top: 0;
     padding-top: 40px;
   }
-  .sidebar div {
+  .sidebarlogin div {
     padding: 5px;
     font-size: 24px;
     display: block;

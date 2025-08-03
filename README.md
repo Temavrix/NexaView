@@ -1,10 +1,10 @@
 # NexaView <img width ="30" height="30" src="https://user-images.githubusercontent.com/69076784/236990283-83859a95-c9fa-4d2a-8729-4afb3900789d.png">
 
-# Built using: <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src=https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1>
-
 ###### An All In One Web based Dashboard For News, Weathers and More...
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Temavrix/NexaView) [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Temavrix/NexaView) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Temavrix/NexaView/issues)
+
+## Our Project is now live: [NexaView](https://nexaview.netlify.app/)
 
 **This Program Is CPU-Intensive Please Make Sure That You're Using A Mid To High Range PC.**
 
@@ -31,15 +31,22 @@ Here at Temavrix we are committed in keeping NexaView up-to-date and up-to-speed
 
 
 ```
+ANNOUNCEMENT:- 
+Going forward ComDash will been renamed to NexaView 
+as part of our larger rebranding initiative.  
+As for the project's future: Our Resources at Temavrix are diverted
+to other new projects so NexaView will be recieving updates less 
+often.
+
 NexaView Changelogs:-
-1. Announcement: Going forward ComDash will been renamed to NexaView
-   as part of our larger rebranding initiative.
-2. Project's Future: Our Resources at Temavrix are diverted to other new
-   projects so NexaView will be recieving updates less often.
-3. Mobile Support: Our Team at Temavrix will continue to work on the 
-   mobile application development of this project as the foundation 
-   has been set in our current codebase.
-4. Bug fixes, code improvements and logo has been changed on tab icons.
+1. Mobile Support: Our Team at Temavrix Have Bought Native Mobile
+   Support with the help of TailwindCSS.
+2. Relogin Issues: Now even after reloading or closing the browser 
+   you won't have to re-login.
+3. Task Card: Individual tasks are now padded to display 
+   seperatedly for ease of viewing.
+4. News Card: News now loads on login (or) entering the dashboard.
+5. Bug fixes, Code and Aesthetic improvements as usual
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -48,7 +55,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 01-July-2025 16:35 HRS (Singapore Standard Time)
+Last Updated: 03-August-2025 21:45 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
@@ -151,7 +158,6 @@ As this project is still in constant development, if you run into any issues whi
 
 
 ## License
-[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/Temavrix/)  
 
 IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute NexaView are kindly advised to:
 
@@ -166,4 +172,8 @@ Thank you for your kind co-operation :-)
 NexaView Copyright (C) Temavrix 2025  
 All Rights Reserved
 
-Version 3.3.0
+Version 3.4.0
+
+
+
+## Built using = <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src=https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1>

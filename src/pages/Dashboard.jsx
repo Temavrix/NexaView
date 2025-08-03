@@ -7,13 +7,12 @@ import { fetchApiConfig } from './GetApis';
 import '../index.css';
 import { collection,addDoc,getDocs,deleteDoc,doc} from 'firebase/firestore';
 import {getAuth, onAuthStateChanged } from 'firebase/auth';
-const user = auth.currentUser;
+import NewsSection from "./NewsSection";
 
 const DashBoard = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [date, setDate] = useState(new Date());
   const [forecastData, setForecastData] = useState([]);
-  const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
   const [todos, setTodos] = useState([]);
   const [task, setTask] = useState('');
@@ -75,43 +74,6 @@ const DashBoard = () => {
 
     fetchWeatherData();
   }, [user]);
-
-  async function getNews(uid) {
-    let newsAccordion = document.getElementById('newsAccordion');
-    let term = document.getElementById('country-search-bar').value;
-    let source1 = document.getElementById('news-search-bar').value;
-    const config = await fetchApiConfig(uid);
-    const apiKey = config?.newsApiKey;
-    if (!apiKey) {
-    console.warn('News API key not found.');
-    return;
-  }
-    const xhr = new XMLHttpRequest();
-    { 
-    xhr.open('GET', `https://gnews.io/api/v4/top-headlines?category=${source1}&lang=en&country=${term}&max=100&apikey=${apiKey}`, true)
-    xhr.onload = function () {
-        let json = JSON.parse(this.responseText);
-        let articles = json.articles;
-        console.log(articles);
-        let newsHtml = "";
-        articles.forEach(function (element, index) {
-          let news = `<div class="newscard border border-white/20 rounded-lg p-4 m-4 bg-white/10 backdrop-blur-md text-white">
-                <div class="card-header" id="heading${index}">
-                    <h2 class="mb-2 font-bold text-white text-lg">${element["title"]}</h2>
-                </div>
-                <div class="card-body">
-                    <a href="${element['url']}" target="_blank" class="text-white underline font-semibold hover:text-blue-400 transition duration-200 block mt-2">
-                        Read more here
-                    </a>
-                </div>
-            </div>`;
-            newsHtml += news;
-        });
-        newsAccordion.innerHTML = newsHtml;
-    }
-    xhr.send() 
-    } 
-  }
 
   function getgoogle() {
     var term;
@@ -204,35 +166,52 @@ const DashBoard = () => {
   
 
   return (
-    <div className="mt-25 lg:mt-45 md:mt-30 sm:mt-30 ml-13 h-screen overflow-auto scrollbar-hide">
+    <div className="mt-25 lg:mt-45 lg:ml-20 md:mt-30 sm:mt-30 ml-10 w-[95%]  h-screen overflow-auto scrollbar-hide">
         <div className="font-sans font-normal text-white text-opacity-90 bg-no-repeat bg-cover antialiased min-h-screen overflow-auto">
-          <div class="sidebar">
-                <div className="relative left-[6px] -top-[40px]">
-                    <img className="relative h-[50px] w-[50px] left-[3px]" src="https://github.com/user-attachments/assets/9380b62b-8486-4f1d-a3bf-821bf120147c" id="Comicon"/>
-                    <div className="relative left-[-2px]">
-                        <img src="https://github.com/user-attachments/assets/8d0aba4c-99ce-4b49-b072-c4da4683a141"/>
-                    </div>
-                    <Link to="/Settings">
-                        <div className="relative left-[-2px]">
-                            <img src="https://github.com/user-attachments/assets/b5cfb272-5083-4d39-9265-67f6bf5335f4"/>
-                        </div>
-                    </Link>
-                    <div className="relative left-[-12px]">
-                      <img src="https://github.com/user-attachments/assets/ddc1481e-22e7-45ab-b1cf-aa85a8a94992" id="Comicon" onClick={handleLogout}/>
-                    </div>
+          {/* Sidebar */}
+          <div className="fixed top-0 left-0 h-full z-50 flex flex-col justify-between 
+                bg-black/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
+                backdrop-blur-[11.5px] border border-white/20 
+                pt-10 px-1
+                w-[60px] sm:w-[70px] md:w-[80px] lg:w-[80px]">
+            <div className="mt-4 relative left-[6px] -top-[40px]">
+              <img className="relative h-[40px] w-[40px] sm:h-[50px] sm:w-[50px] left-0" src="https://github.com/user-attachments/assets/9380b62b-8486-4f1d-a3bf-821bf120147c" id="Comicon"/>
+              <div className="relative left-[-0px] mt-3 cursor-pointer">
+                <img src="https://github.com/user-attachments/assets/8d0aba4c-99ce-4b49-b072-c4da4683a141" className="h-10 w-10 sm:h-10 sm:w-10 md:h-12 md:w-12"/>
+              </div>
+              <Link to="/Settings">
+                <div className="relative left-[-2px] mt-3 lg:left-[-1px]">
+                  <img
+                    src="https://github.com/user-attachments/assets/b5cfb272-5083-4d39-9265-67f6bf5335f4"
+                    className="h-11 w-11 lg:h-13 lg:w-13 md:h-12 md:w-12"
+                    alt="Sidebar Icon"
+                  />
                 </div>
-                <div className="absolute bottom-[2px] left-[5px]">
-                    <div id="Setbutton">
-                        <a href="https://github.com/Temavrix/NexaView" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
-                    </div>
-                </div>
+
+              </Link>
+              <div className="relative left-[-2px] mt-3 lg:left-[-1px]">
+                <img
+                  src="https://github.com/user-attachments/assets/ddc1481e-22e7-45ab-b1cf-aa85a8a94992"
+                  id="Comicon"
+                  onClick={handleLogout}
+                  className="h-11 w-11 lg:h-13 lg:w-13 md:h-12 md:w-12 cursor-pointer"
+                  alt="Logout Icon"
+                />
+              </div>
+
+            </div>
+            <div className="absolute bottom-[10px] left-[10px]">
+              <div id="Setbutton">
+                <a href="https://github.com/Temavrix/NexaView" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
+              </div>
+            </div>
           </div>
       
       
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-rows-fr w-full">
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr w-full">
             <div>
                 {/* Weather Section */}
-                <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full h-[700px]">
+                <div className=" p-[2em] bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full mx-auto h-[720px]">
                   <div className="todayweather">
                     <h3 className="text-white text-[1.17em] font-bold">{weatherData ? `Weather in ${weatherData.name} :` : "Loading Weather..."}</h3><br />
                       {weatherData && (
@@ -269,6 +248,7 @@ const DashBoard = () => {
                     <Calendar onChange={setDate} value={date} />
                   </div>
                 </div>
+
             </div>
                     
             <div>
@@ -296,7 +276,7 @@ const DashBoard = () => {
               <br />
                     
               {/* Todo Section */}
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-tl-[3em] rounded-tr-[3em] rounded-bl-[3em] text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-auto min-h-[945px]">
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-auto min-h-[945px]">
                 <header className="App-header">
                   <h3 className="text-white text-[1.17em] font-bold">Your To-Do Tasks</h3><br />
                   <div className="flex justify-center items-center">
@@ -316,52 +296,25 @@ const DashBoard = () => {
                           </svg>
                     </button>
                   </div><br />
-                  <div className="flex justify-center items-center">
-                    <ul className="text-white text-[1.17em] font-bold">
-                    {todos.map((todo) => (
-                      <li key={todo.id}>
-                        {todo.task}&nbsp;&nbsp;
-                        <button className="m-2 border-none rounded-full h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75" onClick={() => deleteTodo(todo.id)}>✔</button>
-                      </li>
-                    ))}
-                  </ul>
-                  </div>
+                    <div className="flex justify-center items-center">
+                      <ul className="text-white text-[1.17em] font-bold">
+                        {todos.map((todo) => (
+                          <div className="newscard border border-white/20 rounded-lg p-4 m-4 bg-white/10 backdrop-blur-md text-white">
+                            <><li key={todo.id}>
+                              {todo.task}&nbsp;&nbsp;
+                              <button className="m-2 border-none rounded-full h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75" onClick={() => deleteTodo(todo.id)}>✔</button>
+                            </li></>
+                          </div>
+                        ))}
+                      </ul>
+                    </div>
                 </header>
-              </div>
-                  
+              </div>    
             </div>
 
             <div>
               {/* News Section */}
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-tl-[3em] rounded-tr-[3em] rounded-bl-[3em] text-white text-center h-[1168px] p-[2em] w-full max-w-[100%] sm:p-[1.5em] md:p-[2em] lg:p-[3em] overflow-hidden">
-                <h3 className="text-white text-[1.17em] font-bold">News Headlines</h3><br />
-                <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center gap-2 sm:gap-4">
-                  <select className="border-none outline-none w-[150px] px-4 py-2 rounded-[24px] bg-black/40 text-white text-[100%]" id="country-search-bar">
-                                <option value="us" selected>USA</option>
-                                <option value="sg">Singapore</option>
-                                <option value="in">India</option>
-                            </select>
-                            <select className="border-none outline-none px-4 py-2 rounded-[24px] bg-black/40 text-white text-[100%]" id="news-search-bar">
-                                <option value="general" selected>General</option>
-                                <option value="nation">National</option>
-                                <option value="business">Business</option>
-                                <option value="technology">Technology</option>
-                                <option value="entertainment">Entertainment</option>
-                            </select>
-                    <button onClick={() => getNews(user.uid)} id="news-search" className="m-2 rounded-full border-none h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75 flex items-center justify-center">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                                      xmlns="http://www.w3.org/2000/svg">
-                                      <path
-                                          d="M19.875,3H4.125C2.953,3,2,3.897,2,5v14c0,1.103,0.953,2,2.125,2h15.75C21.047,21,22,20.103,22,19V5 C22,3.897,21.047,
-                                          3,19.875,3z M19.875,19H4.125c-0.057,0-0.096-0.016-0.113-0.016c-0.007,0-0.011,0.002-0.012,0.008L3.988,5.046 
-                                          C3.995,5.036,4.04,5,4.125,5h15.75C19.954,5.001,19.997,5.028,20,5.008l0.012,13.946C20.005,18.964,19.96,19,19.875,19z">
-                                      </path>
-                                      <path d="M6 7H12V13H6zM13 15L6 15 6 17 13 17 14 17 18 17 18 15 14 15zM14 11H18V13H14zM14 7H18V9H14z"></path>
-                                  </svg>
-                    </button>
-                </div>
-                <div id="newsAccordion" className="overflow-y-auto max-h-[80vh]"></div>
-              </div>
+              {user && <NewsSection user={user} />}
             </div>
 
           </div>
