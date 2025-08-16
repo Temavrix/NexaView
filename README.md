@@ -34,19 +34,16 @@ Here at Temavrix we are committed in keeping NexaView up-to-date and up-to-speed
 ANNOUNCEMENT:- 
 Going forward ComDash will been renamed to NexaView 
 as part of our larger rebranding initiative.  
-As for the project's future: Our Resources at Temavrix are diverted
+As for the project's future: Our resources at Temavrix are diverted
 to other new projects so NexaView will be recieving updates less 
 often.
 
 NexaView Changelogs:-
-1. Mobile Support: Our Team at Temavrix Have Bought Native Mobile
-   Support with the help of TailwindCSS.
-2. Relogin Issues: Now even after reloading or closing the browser 
-   you won't have to re-login.
-3. Task Card: Individual tasks are now padded to display 
-   seperatedly for ease of viewing.
-4. News Card: News now loads on login (or) entering the dashboard.
-5. Bug fixes, Code and Aesthetic improvements as usual
+1. Mobile Support: Our team at Temavrix have bought native mobile
+   support with the help of TailwindCSS which you can view on our 
+   live webpage linked above.
+2. Parity fixes for both Small and Large screen devices.
+3. Monthly Bug fixes, Code and Aesthetic improvements.
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -55,7 +52,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 03-August-2025 21:45 HRS (Singapore Standard Time)
+Last Updated: 16-August-2025 21:05 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
@@ -172,7 +169,7 @@ Thank you for your kind co-operation :-)
 NexaView Copyright (C) Temavrix 2025  
 All Rights Reserved
 
-Version 3.4.0
+Version 3.4.1
 
 
 

@@ -7,10 +7,16 @@ body {
     align-items: center;
     height: 90vh;
     background-color: black;
-    margin: 0;
+    margin: 10;
     overflow: hidden;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media (max-width: 1420px) {
+  body {
+        height: 100vh;
+  }
 }
 
 .settings-container {

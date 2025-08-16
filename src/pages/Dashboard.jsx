@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Sidebar from "./Sidebar";
 import Calendar from 'react-calendar';
 import { fetchWeather } from "./weather.jsx";
-import { db, auth } from '../firebase.jsx';
+import { db } from '../firebase.jsx';
 import { fetchApiConfig } from './GetApis';
 import '../index.css';
 import { collection,addDoc,getDocs,deleteDoc,doc} from 'firebase/firestore';
@@ -166,52 +166,16 @@ const DashBoard = () => {
   
 
   return (
-    <div className="mt-25 lg:mt-45 lg:ml-20 md:mt-30 sm:mt-30 ml-10 w-[95%]  h-screen overflow-auto scrollbar-hide">
+    <div className="lg:mt-45 mt-5 lg:ml-20 md:mt-30  ml-10 w-[95%]  h-screen overflow-auto scrollbar-hide">
         <div className="font-sans font-normal text-white text-opacity-90 bg-no-repeat bg-cover antialiased min-h-screen overflow-auto">
           {/* Sidebar */}
-          <div className="fixed top-0 left-0 h-full z-50 flex flex-col justify-between 
-                bg-black/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
-                backdrop-blur-[11.5px] border border-white/20 
-                pt-10 px-1
-                w-[60px] sm:w-[70px] md:w-[80px] lg:w-[80px]">
-            <div className="mt-4 relative left-[6px] -top-[40px]">
-              <img className="relative h-[40px] w-[40px] sm:h-[50px] sm:w-[50px] left-0" src="https://github.com/user-attachments/assets/9380b62b-8486-4f1d-a3bf-821bf120147c" id="Comicon"/>
-              <div className="relative left-[-0px] mt-3 cursor-pointer">
-                <img src="https://github.com/user-attachments/assets/8d0aba4c-99ce-4b49-b072-c4da4683a141" className="h-10 w-10 sm:h-10 sm:w-10 md:h-12 md:w-12"/>
-              </div>
-              <Link to="/Settings">
-                <div className="relative left-[-2px] mt-3 lg:left-[-1px]">
-                  <img
-                    src="https://github.com/user-attachments/assets/b5cfb272-5083-4d39-9265-67f6bf5335f4"
-                    className="h-11 w-11 lg:h-13 lg:w-13 md:h-12 md:w-12"
-                    alt="Sidebar Icon"
-                  />
-                </div>
-
-              </Link>
-              <div className="relative left-[-2px] mt-3 lg:left-[-1px]">
-                <img
-                  src="https://github.com/user-attachments/assets/ddc1481e-22e7-45ab-b1cf-aa85a8a94992"
-                  id="Comicon"
-                  onClick={handleLogout}
-                  className="h-11 w-11 lg:h-13 lg:w-13 md:h-12 md:w-12 cursor-pointer"
-                  alt="Logout Icon"
-                />
-              </div>
-
-            </div>
-            <div className="absolute bottom-[10px] left-[10px]">
-              <div id="Setbutton">
-                <a href="https://github.com/Temavrix/NexaView" title="About Us"><img src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"/></a>
-              </div>
-            </div>
-          </div>
+          <Sidebar handleLogout={handleLogout} />
       
       
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr w-full">
             <div>
                 {/* Weather Section */}
-                <div className=" p-[2em] bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full mx-auto h-[720px]">
+                <div className=" p-[2em] bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full mx-auto h-[700px]">
                   <div className="todayweather">
                     <h3 className="text-white text-[1.17em] font-bold">{weatherData ? `Weather in ${weatherData.name} :` : "Loading Weather..."}</h3><br />
                       {weatherData && (
@@ -302,7 +266,8 @@ const DashBoard = () => {
                           <div className="newscard border border-white/20 rounded-lg p-4 m-4 bg-white/10 backdrop-blur-md text-white">
                             <><li key={todo.id}>
                               {todo.task}&nbsp;&nbsp;
-                              <button className="m-2 border-none rounded-full h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75" onClick={() => deleteTodo(todo.id)}>✔</button>
+                              <button className="m-2 border-none rounded-full h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75" 
+                              onClick={() => deleteTodo(todo.id)}>✔</button>
                             </li></>
                           </div>
                         ))}

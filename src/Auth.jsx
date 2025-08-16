@@ -16,7 +16,7 @@ export default function Auth({ onUser }) {
         : await createUserWithEmailAndPassword(auth, email, password);
       onUser(userCredential.user);
     } catch (err) {
-      alert(err.message);
+      alert("Your Email Or Password Is Incorrect. Please Try Again Or If You Are A New User Please Login First !!!");
     }
   };
 
@@ -26,7 +26,13 @@ export default function Auth({ onUser }) {
       <div className="fixed top-0 left-0 h-screen w-[70px] sm:w-[80px] bg-black/70 backdrop-blur-md z-50 flex flex-col items-center justify-between py-6">
         <img className="h-[50px] w-[50px]" src="https://github.com/user-attachments/assets/9380b62b-8486-4f1d-a3bf-821bf120147c" alt="Icon"/>
         <a href="https://github.com/Temavrix/NexaView" title="About Us">
-          <img className="h-[35px] w-[35px]" src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236" alt="About Us"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 192 512"
+            className="h-[35px] w-[35px] fill-white"
+          >
+            <path d="M48 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM0 192c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 256 32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0 0-224-32 0c-17.7 0-32-14.3-32-32z"/>
+          </svg>
         </a>
       </div>
 
