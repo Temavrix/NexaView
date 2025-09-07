@@ -175,7 +175,7 @@ const DashBoard = () => {
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr w-full">
             <div>
                 {/* Weather Section */}
-                <div className=" p-[2em] bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full mx-auto h-[700px]">
+                <div className=" p-2em bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full mx-auto h-[700px]">
                   <div className="todayweather">
                     <h3 className="text-white text-[1.17em] font-bold">{weatherData ? `Weather in ${weatherData.name} :` : "Loading Weather..."}</h3><br />
                       {weatherData && (
@@ -207,7 +207,7 @@ const DashBoard = () => {
                 <br />
                     
                 {/* Calander Section */}
-                <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] h-[450px] text-black text-center p-[2em]">
+                <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] h-[450px] text-center p-[2em]">
                   <div className='calendar-container bg-white/20'>
                     <Calendar onChange={setDate} value={date} />
                   </div>

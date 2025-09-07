@@ -35,7 +35,7 @@ const NewsSection = ({ user }) => {
   }, [user, country, category]);
 
   return (
-    <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white text-center h-screen max-sm:h-[115vh] p-[2em] w-full max-w-[100%] sm:p-[1.5em] md:p-[2em] lg:p-[3em] lg:h-[1168px] overflow-hidden">
+    <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white text-center h-screen max-sm:h-[115vh] p-[1em] w-full max-w-[100%] sm:p-[1.5em] md:p-[2em] lg:p-[3em] lg:h-[1168px] overflow-hidden">
       <h3 className="text-white text-[1.17em] font-bold">News Headlines</h3><br />
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center gap-2 sm:gap-4">
         <select
