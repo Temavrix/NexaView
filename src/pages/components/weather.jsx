@@ -1,4 +1,4 @@
-import { fetchApiConfig } from './GetApis';
+import { fetchApiConfig } from '../GetApis';
 
 export async function fetchWeather(uid) {
   try {

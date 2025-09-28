@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./components/Sidebar.jsx";
 import Calendar from 'react-calendar';
-import { fetchWeather } from "./weather.jsx";
+import { fetchWeather } from "./components/weather.jsx";
 import { db } from '../firebase.jsx';
 import { fetchApiConfig } from './GetApis';
 import '../index.css';
 import { collection,addDoc,getDocs,deleteDoc,doc} from 'firebase/firestore';
 import {getAuth, onAuthStateChanged } from 'firebase/auth';
-import NewsSection from "./NewsSection";
+import NewsSection from "./components/NewsSection";
+import SunTracker from './components/SunPosition.jsx'
 
 const DashBoard = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -166,13 +167,13 @@ const DashBoard = () => {
   
 
   return (
-    <div className="lg:mt-45 mt-5 lg:ml-20 md:mt-30  ml-10 w-[95%]  h-screen overflow-auto scrollbar-hide">
+    <div className="lg:mt-45 mt-5 lg:ml-20 md:mt-30 ml-10 w-[95%] h-screen overflow-auto scrollbar-hide">
         <div className="font-sans font-normal text-white text-opacity-90 bg-no-repeat bg-cover antialiased min-h-screen overflow-auto">
           {/* Sidebar */}
           <Sidebar handleLogout={handleLogout} />
       
       
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr w-full">
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-rows-fr w-full">
             <div>
                 {/* Weather Section */}
                 <div className=" p-2em bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full mx-auto h-[700px]">
@@ -216,31 +217,16 @@ const DashBoard = () => {
             </div>
                     
             <div>
-              {/* Google search Section */}
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-black h-[200px] text-center p-[2em]">
-                <h3 className="text-white text-[1.17em] font-bold">Google Search</h3><br />
+
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-black h-[210px] text-center p-[1em]">
                 <div className="flex justify-center items-center">
-                  <input className="border-none outline-none px-4 py-[0.4em] rounded-[24px] bg-black/40 text-white text-base w-[273px] text-center" type="text" id="google-search-bar" placeholder="Search Google" />
-                  <button onClick={getgoogle} className="m-2 border-none rounded-full h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75 flex justify-center items-center">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" viewBox="0 0 48 48"
-                         enable-background="new 0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
-                        c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
-                        c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
-                        <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
-                        C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
-                        <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
-                        c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
-                        <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
-                        c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
-                    </svg>
-                  </button>
+                  <SunTracker />
                 </div>
               </div>
               <br />
-                    
+
               {/* Todo Section */}
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-auto min-h-[945px]">
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-[940px]">
                 <header className="App-header">
                   <h3 className="text-white text-[1.17em] font-bold">Your To-Do Tasks</h3><br />
                   <div className="flex justify-center items-center">
@@ -261,18 +247,20 @@ const DashBoard = () => {
                     </button>
                   </div><br />
                     <div className="flex justify-center items-center">
+                    <div className="w-full max-w-[500px] h-[700px] overflow-y-auto scrollbar-hide">
                       <ul className="text-white text-[1.17em] font-bold">
                         {todos.map((todo) => (
-                          <div className="newscard border border-white/20 rounded-lg p-4 m-4 bg-white/10 backdrop-blur-md text-white">
-                            <><li key={todo.id}>
+                          <div key={todo.id} className="newscard border border-white/20 rounded-lg p-2 m-4 bg-white/10 backdrop-blur-md text-white">
+                            <li>
                               {todo.task}&nbsp;&nbsp;
-                              <button className="m-2 border-none rounded-full h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75" 
-                              onClick={() => deleteTodo(todo.id)}>✔</button>
-                            </li></>
-                          </div>
-                        ))}
+                              <button className="m-2 border-none rounded-full h-[31px] w-[33px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75" onClick={() => deleteTodo(todo.id)}>
+                                ✔
+                              </button>
+                            </li>
+                          </div> ))} 
                       </ul>
                     </div>
+                  </div>
                 </header>
               </div>    
             </div>

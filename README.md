@@ -1,7 +1,9 @@
 # NexaView <img width ="30" height="30" src="https://user-images.githubusercontent.com/69076784/236990283-83859a95-c9fa-4d2a-8729-4afb3900789d.png">
 
+## Current Status : [![Netlify Status](https://api.netlify.com/api/v1/badges/8214a672-052e-407c-9c7d-0300b4294f53/deploy-status)](https://app.netlify.com/projects/nexaview/deploys)
+
 ###### An All In One Web based Dashboard For News, Weathers and More...
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8214a672-052e-407c-9c7d-0300b4294f53/deploy-status)](https://app.netlify.com/projects/nexaview/deploys)
+
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Temavrix/NexaView) [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Temavrix/NexaView) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Temavrix/NexaView/issues)
 
@@ -33,15 +35,14 @@ Here at Temavrix we are committed in keeping NexaView up-to-date and up-to-speed
 
 ```
 ANNOUNCEMENT:- 
-Going forward ComDash will been renamed to NexaView 
-as part of our larger rebranding initiative.  
-As for the project's future: Our resources at Temavrix are diverted
+For the project's future: Our resources at Temavrix are diverted
 to other new projects so NexaView will be recieving updates less 
 often.
 
 NexaView Changelogs:-
-1. CI/CD Implementations.
-2. Monthly Bug fixes, Code and Aesthetic improvements.
+1. Removed Google Search and added Sun-Tracker [Experimental]
+2. News Loading Fixed
+3. Monthly Bug fixes, Code and Aesthetic improvements.
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -50,14 +51,15 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 7-September-2025 19:30 HRS (Singapore Standard Time)
+Last Updated: 28-September-2025 16:00 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
 
 
 ## Introducing NexaView
-NexaView is an all-in-one web-based Dashboard to get essential day-to-day information such as current weather, weather forecast, global news headlines and store To-do tasks for users. This product is built primarily using React JS as the frontend framework and Firebase as the backend database to store and retrieve user's information. 
+NexaView is an all-in-one web-based Dashboard to get essential day-to-day information such as current weather, weather forecast, global news headlines and store To-do tasks for users.  
+This product is built primarily using React JS as the frontend framework and Firebase as the backend database to store and retrieve user's information. 
 
 
 ## Running NexaView On Your Local Computer

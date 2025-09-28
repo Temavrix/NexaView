@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { db, auth } from "../firebase.jsx";
-import Sidebar from "./Sidebar";
+import Sidebar from "./components/Sidebar";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import "./Settings.css";
