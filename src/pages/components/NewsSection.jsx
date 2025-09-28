@@ -16,7 +16,7 @@ const NewsSection = ({ user }) => {
       if (!apiKey) throw new Error("Missing News API key");
         
       const res = await fetch(
-        `http://localhost:5000/api/news?apikey=${apiKey}&category=${category}&country=${country}`
+        `https://taskaid-backend-8v50.onrender.com/api/news?apikey=${apiKey}&category=${category}&country=${country}`
       );
       const json = await res.json();
       setArticles(json.articles || []);
