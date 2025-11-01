@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import DashBoard from './pages/Dashboard';
 import Settings from './pages/Settings';
+import NewsBoard from './pages/Newsboard';
 import Auth from './Auth';
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
             <>
               <Route path="/" element={<DashBoard user={user} />} />
               <Route path="/settings" element={<Settings user={user} />} />
+              <Route path="/Newsboard" element={<NewsBoard user={user} />} />
               <Route path="*" element={<Navigate to="/" />} />
             </>
           )}

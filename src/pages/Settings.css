@@ -74,6 +74,22 @@ body {
     background: rgba(255, 255, 255, 0.749);
 }
 
+.custom-calendar .react-calendar__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+  margin-bottom: 12px;
+}
+
+.custom-calendar .react-calendar__navigation button {
+  padding: 6px 10px;
+  margin: 0; 
+  color: white;
+  border: none;
+}
+
+
 .react-calendar__month-view__days {
   height: 330px;
 }

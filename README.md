@@ -12,8 +12,12 @@
 **This Program Is CPU-Intensive Please Make Sure That You're Using A Mid To High Range PC.**
 
 ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgrading of Infrasturcture and Services) for users wishing to go back to the Vanilla Js version head to: [Commit 0b9d90](https://github.com/Temavrix/NexaView/tree/0b9d90cb93b83920100099202fe27f8b99fd7efa)
- 
-<img width="250" src="https://github.com/user-attachments/assets/1cf8f51c-04bb-4969-8a1a-42e6766288bf"> <img width="250" src="https://github.com/user-attachments/assets/d3f74745-3b2a-4238-afcb-fe8bb3991094"> <img width="250" src="https://github.com/user-attachments/assets/60901731-8ed1-49cc-af7b-95c5feefb1e2">
+
+
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/acb2cd97-49f1-45fd-8972-aea40672ad7c" />
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/4c4a9121-a270-4b0b-8306-823587a58915" />
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/f08aefb6-7bcb-48b6-9a8f-77f98068be23" />
+
 
 
 ## Table Of Contents
@@ -39,10 +43,22 @@ For the project's future: Our resources at Temavrix are diverted
 to other new projects so NexaView will be recieving updates less 
 often.
 
+We are planning to add more UI/UX changes and soon a page to make Donations 
+to help with our organisation's fundings.
+
 NexaView Changelogs:-
-1. Removed Google Search and added Sun-Tracker [Experimental]
-2. News Loading Fixed
-3. Monthly Bug fixes, Code and Aesthetic improvements.
+
+QUALITY UPDATE:-
+1. New dedicated Newsboard page for news fetching.
+   1.1 By using News API to get live news and curated news section
+   1.2 Added StockCard component to display stock prices
+   1.3 Added component to visualize recent earthquakes
+2. Enhanced Main Dashboard with new weather widgets for wind, humidity, and clouds.
+3. Updated Settings page to include new API keys for news fetching
+
+MONTHLY UPDATE:-
+1. Improved styling and layout across various components
+
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -51,7 +67,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 28-September-2025 16:00 HRS (Singapore Standard Time)
+Last Updated: 01-Novemeber-2025 22:55 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.

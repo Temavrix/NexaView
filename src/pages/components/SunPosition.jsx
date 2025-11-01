@@ -50,7 +50,7 @@ export default function SunTracker({
   }, [cx, cy, r]);
 
   return (
-    <div className="p-1 text-white" style={{ width }}>
+    <div className="text-white" style={{ width }}>
       <div className="flex items-center gap-2 mb-2">
       </div>
       <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
@@ -60,12 +60,12 @@ export default function SunTracker({
         {/* Sun */}
         <circle cx={sunX} cy={sunY} r={10} fill="#FFD93D" stroke="#FFC83D" strokeWidth="2" />
       </svg>
-      <div className="flex justify-between text-xs mt-[-1.2em] px-1">
+      <div className="flex justify-between text-xs mt-[-0.2em] px-1">
         <div className="flex flex-col items-start">
-          <span className="opacity-70">Sunrise</span>
+          <span>Dawn</span>
         </div>
         <div className="flex flex-col items-end">
-          <span className="opacity-70">Sunset</span>
+          <span>Dusk</span>
         </div>
       </div>
     </div>

@@ -7,7 +7,9 @@ import { fetchApiConfig } from './GetApis';
 import '../index.css';
 import { collection,addDoc,getDocs,deleteDoc,doc} from 'firebase/firestore';
 import {getAuth, onAuthStateChanged } from 'firebase/auth';
-import NewsSection from "./components/NewsSection";
+import WindWid from "./components/Wind.jsx";
+import HumidityWid from "./components/Humidity.jsx";
+import Clouds from "./components/Clouds.jsx";
 import SunTracker from './components/SunPosition.jsx'
 
 const DashBoard = () => {
@@ -69,22 +71,11 @@ const DashBoard = () => {
         setForecastData(data.list);
       } catch (error) {
         console.error(error);
-        setError(error.message);
       }
     };
 
     fetchWeatherData();
   }, [user]);
-
-  function getgoogle() {
-    var term;
-    term = document.getElementById('google-search-bar').value;
-    if (term == "") {
-        alert("Please Enter Something Before Asking Google!");
-    } else {
-        myWindow = window.open(`http://www.google.com/search?q=${term}`, "_blank")
-    }
-  }
   
   async function getImage(uid) {
     try {
@@ -176,18 +167,17 @@ const DashBoard = () => {
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-rows-fr w-full">
             <div>
                 {/* Weather Section */}
-                <div className=" p-2em bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-white p-4 sm:p-6 md:p-[3em] w-full max-w-full mx-auto h-[700px]">
+                <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-white p-3 sm:p-10 md:p-4 w-full max-w-full mx-auto h-[700px]">
                   <div className="todayweather">
                     <h3 className="text-white text-[1.17em] font-bold">{weatherData ? `Weather in ${weatherData.name} :` : "Loading Weather..."}</h3><br />
                       {weatherData && (
                           <>
                           <h4 className="text-white text-[1.17em] font-bold">Temperature: {weatherData.main.temp}°C</h4>
-                          <h4 className="text-white text-[1.17em] font-bold"><img className="h-[85px]" id="weathericon" src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}/>
-                          Description: {weatherData.weather[0].description}<br />
+                          <h4 className="text-white text-[1.17em] font-bold"><img className="h-[140px]" id="weathericon" src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}/>
+                           {weatherData.weather[0].description}<br />
                           Currently Feels like: {weatherData.main.feels_like}°C<br />
-                          Min Temp: {weatherData.main.temp_min}°C || Max Temp: {weatherData.main.temp_max}°C<br />
-                          Humidity: {weatherData.main.humidity}%<br />
-                          Wind Speed: {weatherData.wind.speed} m/s</h4>
+                          Min Temp: {weatherData.main.temp_min}°C<br />
+                          Max Temp: {weatherData.main.temp_max}°C</h4>
                           </>
                     )}
                   </div><br />
@@ -208,25 +198,83 @@ const DashBoard = () => {
                 <br />
                     
                 {/* Calander Section */}
-                <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] h-[450px] text-center p-[2em]">
+                <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 h-[450px] text-center p-3">
                   <div className='calendar-container bg-white/20'>
-                    <Calendar onChange={setDate} value={date} />
+                    <Calendar className="text-1xl custom-calendar" onChange={setDate} value={date} />
                   </div>
                 </div>
 
             </div>
                     
             <div>
-
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-black h-[210px] text-center p-[1em]">
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-black h-[290px] text-center p-[1em]">
                 <div className="flex justify-center items-center">
                   <SunTracker />
+                </div>
+                <br/>
+                <div className="flex justify-center items-center">
+                  {weatherData && (
+                    <h4 className="text-white font-semibold text-[1.20em]">
+                      Sunrise:{" "}
+                      {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                      <br/>
+                      Sunset:{" "}
+                      {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString([], {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </h4>
+                  )}
                 </div>
               </div>
               <br />
 
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-black h-[312px] text-center p-[1em]">
+                <div className="flex justify-center items-center">
+                  {weatherData && (
+                    <Clouds 
+                    cloud = {weatherData.clouds.all}
+                    />
+                  )}
+                </div>
+                <div className="flex justify-center items-center">
+                  {weatherData && (
+                    <h4 className="text-white font-semibold text-[1.20em]">Pressure: {weatherData.main.pressure} hPa/mb</h4>
+                  )}
+                </div>
+              </div>
+              <br />
+
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-black h-[270px] text-center p-[1em]">
+                <div className="flex justify-center items-center">
+                  {weatherData && (
+                    <WindWid
+                      speed={weatherData.wind.speed}
+                      deg={weatherData.wind.deg}
+                      gust={weatherData.wind.gust}
+                    />
+                  )}
+                </div>
+              </div>
+              <br />
+
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-black h-[230px] text-center p-[1em]">
+                <div className="flex justify-center items-center">
+                  {weatherData && (
+                    <HumidityWid
+                      humidity={weatherData.main.humidity}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div>
               {/* Todo Section */}
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 rounded-[3em] text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-[940px]">
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-[1174px]">
                 <header className="App-header">
                   <h3 className="text-white text-[1.17em] font-bold">Your To-Do Tasks</h3><br />
                   <div className="flex justify-center items-center">
@@ -262,12 +310,7 @@ const DashBoard = () => {
                     </div>
                   </div>
                 </header>
-              </div>    
-            </div>
-
-            <div>
-              {/* News Section */}
-              {user && <NewsSection user={user} />}
+              </div>
             </div>
 
           </div>

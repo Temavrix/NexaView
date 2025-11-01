@@ -19,6 +19,7 @@ export const fetchApiConfig = async (uid) => {
         city: data.city || '',
         country: data.country || '',
         newsApiKey: data.newsApiKey || '',
+        curNewsKey: data.curNewsKey || '',
         openWeatherKey: data.openWeatherKey || '',
       };
     } else {

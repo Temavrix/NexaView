@@ -41,6 +41,7 @@ const Settings = () => {
   const [apiConfig, setApiConfig] = useState({
     openWeatherKey: "",
     newsApiKey: "",
+    curNewsKey: "",
     country: "",
     city: "",
   });
@@ -80,9 +81,8 @@ const Settings = () => {
       overflow-auto pr-4 bg-black/30 
       shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] 
       backdrop-blur-[11.5px] border border-white/20 
-      p-6 md:p-10 rounded-[30px] w-full 
-      text-[0.95rem] md:text-base lg:text-lg"
-  >
+      p-4 md:p-10 w-full 
+      text-[0.95rem] md:text-base lg:text-lg">
         
         <label className="text-white font-bold text-lg md:text-xl lg:text-2xl">SETTINGS:</label>
         <p className="text-white font-medium text-sm md:text-base lg:text-lg mt-2">
@@ -100,8 +100,14 @@ const Settings = () => {
           {
             label: "GNews API:",
             name: "newsApiKey",
-            placeholder: "NewsAPI Key",
+            placeholder: "GNewsAPI Key",
             link: "https://gnews.io/login",
+          },
+          {
+            label: "News API:",
+            name: "curNewsKey",
+            placeholder: "Curated News Key",
+            link: "https://newsapi.org/register",
           },
           {
             label: "Your City:",
@@ -116,44 +122,24 @@ const Settings = () => {
             link: "https://unsplash.com/join",
           },
         ].map(({ label, name, placeholder, link }) => (
-          <div
-            key={name}
-            className="input-group flex flex-col md:flex-row md:items-center md:gap-2 mt-2"
-          >
+          <div key={name} className="input-group flex flex-col md:flex-row md:items-center md:gap-2 mt-2">
             <label className="text-white text-[1em] font-bold">{label}</label>
-            <input
-              className="border-none outline-none px-[1em] py-[0.6em] rounded-[24px] bg-white/30 text-white text-[55%] w-full sm:w-[260px] text-center mt-1 md:mt-0"
-              name={name}
-              type="text"
-              placeholder={placeholder}
-              value={apiConfig[name]}
-              onChange={handleApiChange}
-            />
+            <input className="border-none outline-none px-[1em] py-[0.6em] rounded-[24px] bg-white/30 text-white text-[55%] w-full sm:w-[260px] text-center mt-1 md:mt-0"
+              name={name} type="text" placeholder={placeholder} value={apiConfig[name]} onChange={handleApiChange}/>
             {link && (
-              <button
-                onClick={() => window.open(link, "_blank")}
-                className="text-white ml-1"
-              >
+              <button onClick={() => window.open(link, "_blank")} className="text-white ml-1">
                 ?
               </button>
             )}
             {name === "city" && (
-              <button
-                onClick={() =>
-                  alert("Enter current city Ex. Singapore, New York, Sydney")
-                }
-                className="text-white ml-1"
-              >
+              <button onClick={() => alert("Enter current city Ex. Singapore, New York, Sydney")} className="text-white ml-1">
                 ?
               </button>
             )}
           </div>
         ))}
 
-        <button
-          className="mt-4 rounded-full border-none h-[31px] w-[50px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75"
-          onClick={saveApiConfig}
-        >
+        <button className="mt-4 rounded-full border-none h-[31px] w-[50px] bg-[#545454] text-white cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/75" onClick={saveApiConfig}>
           Save
         </button>
       </div>

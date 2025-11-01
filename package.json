@@ -11,13 +11,17 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.4",
+    "axios": "^1.12.2",
     "firebase": "^11.6.0",
     "react": "^19.0.0",
     "react-calendar": "^5.1.0",
     "react-dom": "^19.0.0",
+    "react-globe": "^2.0.1",
+    "react-globe.gl": "^2.36.0",
     "react-router-dom": "^7.4.1",
     "tailwind-scrollbar-hide": "^2.0.0",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "three": "^0.180.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

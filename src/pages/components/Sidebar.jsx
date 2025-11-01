@@ -1,12 +1,19 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import NexaView from "../assets/NexaView.png";
+import dash from "../assets/dash.png";
+import sett from "../assets/settings.png";
+import about from "../assets/about.png";
+import log from "../assets/logout.png";
+import newsImg from "../assets/news.png";
 
 export default function Sidebar({ handleLogout }) {
   const location = useLocation();
   const navigate = useNavigate();
 
   // Detect active page
-  const isSettingsPage = location.pathname === "/Settings";
   const isDashboardPage = location.pathname === "/Dashboard"; // adjust if your route is just "/"
+  const isNewsboardPage = location.pathname === "/Newsboard";
+  const isSettingsPage = location.pathname === "/Settings";
 
   return (
     <div className="fixed top-0 left-0 h-full z-50 flex flex-col justify-between 
@@ -21,7 +28,7 @@ export default function Sidebar({ handleLogout }) {
         {/* Logo */}
         <img
           className="h-[40px] w-[40px] sm:h-[50px] sm:w-[50px]"
-          src="https://github.com/user-attachments/assets/9380b62b-8486-4f1d-a3bf-821bf120147c"
+          src={NexaView}
           alt="Comicon"
         />
 
@@ -29,16 +36,34 @@ export default function Sidebar({ handleLogout }) {
         <div className="w-[48px] h-[48px] flex items-center justify-center">
           {isDashboardPage ? (
             <img
-              src="https://github.com/user-attachments/assets/8d0aba4c-99ce-4b49-b072-c4da4683a141"
+              src={dash}
               alt="Dashboard Active"
               className="h-10 w-10 md:h-12 md:w-12 opacity-100"
             />
           ) : (
             <img
-              src="https://github.com/user-attachments/assets/8d0aba4c-99ce-4b49-b072-c4da4683a141"
+              src={dash}
               alt="Go Back to Dashboard"
               className="h-10 w-10 md:h-12 md:w-12 cursor-pointer"
               onClick={() => navigate("/Dashboard")}
+            />
+          )}
+        </div>
+
+        {/* Newsboard Icon */}
+        <div className="w-[48px] h-[48px] flex items-center justify-center">
+          {isNewsboardPage ? (
+            <img
+              src={newsImg}
+              alt="Dashboard Active"
+              className="h-10 w-10 md:h-12 md:w-12 opacity-100"
+            />
+          ) : (
+            <img
+              src={newsImg}
+              alt="Go Back to Dashboard"
+              className="h-10 w-10 md:h-12 md:w-12 cursor-pointer"
+              onClick={() => navigate("/NewsBoard")}
             />
           )}
         </div>
@@ -47,14 +72,14 @@ export default function Sidebar({ handleLogout }) {
         <div className="w-[48px] h-[48px] flex items-center justify-center">
           {isSettingsPage ? (
             <img
-              src="https://github.com/user-attachments/assets/b5cfb272-5083-4d39-9265-67f6bf5335f4"
+              src={sett}
               alt="Settings Active"
               className="h-10 w-10 md:h-12 md:w-12 opacity-100"
             />
           ) : (
             <Link to="/Settings">
               <img
-                src="https://github.com/user-attachments/assets/b5cfb272-5083-4d39-9265-67f6bf5335f4"
+                src={sett}
                 alt="Settings"
                 className="h-10 w-10 md:h-12 md:w-12"
               />
@@ -65,7 +90,7 @@ export default function Sidebar({ handleLogout }) {
         {/* Logout */}
         <div className="w-[48px] h-[48px] flex items-center justify-center cursor-pointer">
           <img
-            src="https://github.com/user-attachments/assets/ddc1481e-22e7-45ab-b1cf-aa85a8a94992"
+            src={log}
             alt="Logout"
             className="h-10 w-10 md:h-12 md:w-12"
             onClick={handleLogout}
@@ -78,7 +103,7 @@ export default function Sidebar({ handleLogout }) {
         { isDashboardPage ? (
             <a href="https://github.com/Temavrix/NexaView" title="About Us">
                 <img
-                  src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"
+                  src={about}
                   className="h-13 w-13"
                   alt="About Us"
                 />
@@ -86,7 +111,7 @@ export default function Sidebar({ handleLogout }) {
         ):(
             <a href="https://github.com/Temavrix/NexaView" title="About Us">
                 <img
-                    src="https://github.com/user-attachments/assets/e9530ede-b4bb-4842-a11a-bfcdeed6d236"
+                    src={about}
                     className="h-13 w-13"
                     alt="About Us"
                 />
