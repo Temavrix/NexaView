@@ -198,16 +198,16 @@ const DashBoard = () => {
                 <br />
                     
                 {/* Calander Section */}
-                <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 h-[450px] text-center p-3">
+                <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 h-[455px] text-center p-2">
                   <div className='calendar-container bg-white/20'>
-                    <Calendar className="text-1xl custom-calendar" onChange={setDate} value={date} />
+                    <Calendar className="custom-calendar" onChange={setDate} value={date} />
                   </div>
                 </div>
 
             </div>
                     
             <div>
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-black h-[290px] text-center p-[1em]">
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-black h-[295px] text-center p-[1em]">
                 <div className="flex justify-center items-center">
                   <SunTracker />
                 </div>
@@ -274,7 +274,7 @@ const DashBoard = () => {
 
             <div>
               {/* Todo Section */}
-              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-[1174px]">
+              <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-[1179px]">
                 <header className="App-header">
                   <h3 className="text-white text-[1.17em] font-bold">Your To-Do Tasks</h3><br />
                   <div className="flex justify-center items-center">

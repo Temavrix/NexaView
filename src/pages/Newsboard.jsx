@@ -83,11 +83,11 @@ const NewsBoard = () => {
         <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-rows-fr w-full">
           {/* First Column */}
           <div>
-            <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 h-[520px] text-center p-3">
+            <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 h-[570px] text-center p-3">
               <StockCard/>
             </div>
             <br />
-            <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 h-[450px] text-center p-3">
+            <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 h-[580px] text-center p-3">
               <EarthquakeGlobe/>
             </div>
           </div>

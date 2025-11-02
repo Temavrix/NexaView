@@ -14,9 +14,9 @@
 ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgrading of Infrasturcture and Services) for users wishing to go back to the Vanilla Js version head to: [Commit 0b9d90](https://github.com/Temavrix/NexaView/tree/0b9d90cb93b83920100099202fe27f8b99fd7efa)
 
 
-<img width="250" alt="Image" src="https://github.com/user-attachments/assets/acb2cd97-49f1-45fd-8972-aea40672ad7c" />
-<img width="250" alt="Image" src="https://github.com/user-attachments/assets/4c4a9121-a270-4b0b-8306-823587a58915" />
-<img width="250" alt="Image" src="https://github.com/user-attachments/assets/f08aefb6-7bcb-48b6-9a8f-77f98068be23" />
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/acb2cd97-49f1-45fd-8972-aea40672ad7c" /> 
+<img width="250" alt="Image" src="https://drive.google.com/file/d/1GyrrzEsgn0_9pXhFQzIKNq29jujsfWGT/view?usp=sharing" /> 
+<img width="250" alt="Image" src="https://drive.google.com/file/d/1Um9GOSdBUS7uMRLFTsVl-mTo5AicDU2Q/view?usp=sharing" /> 
 
 
 
@@ -49,15 +49,11 @@ to help with our organisation's fundings.
 NexaView Changelogs:-
 
 QUALITY UPDATE:-
-1. New dedicated Newsboard page for news fetching.
-   1.1 By using News API to get live news and curated news section
-   1.2 Added StockCard component to display stock prices
-   1.3 Added component to visualize recent earthquakes
-2. Enhanced Main Dashboard with new weather widgets for wind, humidity, and clouds.
-3. Updated Settings page to include new API keys for news fetching
-
-MONTHLY UPDATE:-
-1. Improved styling and layout across various components
+1. Redis Cloud has been added to our tech stack under Project Wrapspeed.
+2. Redis database will now assist users to load most frequently used News 
+   Categories and locations (Soon to be upgraded to other features).
+3. Removed the need for users to register GNewsAPI.
+4. Improved styling and layout across various components.
 
 
 Code Checks Manifest:-
@@ -67,7 +63,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 01-Novemeber-2025 22:55 HRS (Singapore Standard Time)
+Last Updated: 02-Novemeber-2025 21:45 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
@@ -185,8 +181,8 @@ Thank you for your kind co-operation :-)
 NexaView Copyright (C) Temavrix 2025  
 All Rights Reserved
 
-Version 3.4.2
+Version 3.5.2
 
 
 
-## Built using = <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src=https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1>
+## Built using = <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1"> + <img width="90" height="30" src="https://github.com/user-attachments/assets/b2ff8604-70e9-489c-9eb3-3d5d850169a3">

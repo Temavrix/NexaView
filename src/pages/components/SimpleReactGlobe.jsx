@@ -64,22 +64,27 @@ export default function EarthquakeGlobe() {
   const colorInterpolator = (t) => `rgba(255, 80, 50, ${Math.sqrt(1 - t)})`;
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <Globe
-        ref={globeEl}
-        globeImageUrl="https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg"
-        backgroundColor="rgba(0,0,0,0)"
-        ringsData={rings}
-        ringColor={() => colorInterpolator}
-        ringMaxRadius="maxR"
-        ringPropagationSpeed="propagationSpeed"
-        ringRepeatPeriod="repeatPeriod"
-        onRingClick={(ring) => {
-          if (ring.url) window.open(ring.url, "_blank");
-        }}
-        width={400}
-        height={400}
-      />
+    <div>
+      <br/>
+      <h3 className="text-white text-[1.17em] font-bold">Latest Natural Disasters</h3>
+      <div className="w-full h-full flex items-center justify-center">
+        <Globe
+          ref={globeEl}
+          globeImageUrl="https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg"
+          backgroundColor="rgba(0,0,0,0)"
+          ringsData={rings}
+          ringColor={() => colorInterpolator}
+          ringMaxRadius="maxR"
+          ringPropagationSpeed="propagationSpeed"
+          ringRepeatPeriod="repeatPeriod"
+          onRingClick={(ring) => {
+            if (ring.url) window.open(ring.url, "_blank");
+          }}
+          width={500}
+          height={500}
+        />
+      </div>
     </div>
+    
   );
 }

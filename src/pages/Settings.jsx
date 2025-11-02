@@ -41,7 +41,6 @@ const Settings = () => {
   const [apiConfig, setApiConfig] = useState({
     openWeatherKey: "",
     newsApiKey: "",
-    curNewsKey: "",
     country: "",
     city: "",
   });
@@ -98,14 +97,8 @@ const Settings = () => {
             link: "https://home.openweathermap.org/subscriptions/unauth_subscribe/onecall_30/base",
           },
           {
-            label: "GNews API:",
-            name: "newsApiKey",
-            placeholder: "GNewsAPI Key",
-            link: "https://gnews.io/login",
-          },
-          {
             label: "News API:",
-            name: "curNewsKey",
+            name: "newsApiKey",
             placeholder: "Curated News Key",
             link: "https://newsapi.org/register",
           },

@@ -6,35 +6,33 @@ const CurNewsSection = ({ user }) => {
   const [articles, setArticles] = useState([]);
 
   const getNews = async () => {
-    if (!term.trim()) {
-      alert("Please Enter Keyword (Ex. Biden, Tesla, F1) To Get Relevant News Articles Regarding It.");
-      return;
-    }
+  if (!term.trim()) {
+    alert("Please Enter Keyword (Ex. Biden, Tesla, F1) To Get Relevant News Articles Regarding It.");
+    return;
+  }
 
-    try {
-      const config = await fetchApiConfig(user.uid);
-      const apiKey = config?.curNewsKey;
-      if (!apiKey) throw new Error("Missing News API key");
-      const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${encodeURIComponent(term)}&apiKey=${apiKey}`
-      );
-      const data = await response.json();
+  try {
+    const config = await fetchApiConfig(user.uid);
+    const apiKey = config?.newsApiKey;
+    if (!apiKey) throw new Error("Missing News API key");
 
-      if (data.articles) {
-        setArticles(data.articles);
-      } else {
-        setArticles([]);
-      }
-    } catch (err) {
-      console.error("Error fetching news:", err);
-    }
-  };
-  
+    // ✅ Correct query parameter usage
+    const res = await fetch(
+      `https://temalith.onrender.com/api/curnews?term=${encodeURIComponent(term)}&apikey=${apiKey}`
+    );
+
+    const json = await res.json();
+    setArticles(json.articles || []);
+  } catch (err) {
+    console.error("Error fetching news:", err);
+    setArticles([]);
+  }
+};
 
   return (
     <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-white text-center h-screen max-sm:h-[115vh] p-[1em] w-full max-w-[100%] sm:p-[1.5em] md:p-[2em] lg:p-[3em] lg:h-[1174px] overflow-hidden">
-      <h2 className="text-xl font-semibold mb-4">Curated News Articles</h2>
-
+      <h2 className="text-white text-[1.17em] font-bold">Curated News Articles</h2>
+      <br />
       {/* Search bar */}
       <div className="flex items-center gap-2 mb-4">
         <input

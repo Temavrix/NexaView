@@ -1,6 +1,6 @@
 // components/NewsSection.jsx
+//https://taskaid-backend-8v50.onrender.com/api/news?apikey=${apiKey}&category=${category}&country=${country}
 import React, { useEffect, useState } from "react";
-import { fetchApiConfig } from '../GetApis';
 
 const NewsSection = ({ user }) => {
   const [country, setCountry] = useState("us");
@@ -11,12 +11,9 @@ const NewsSection = ({ user }) => {
   const fetchNews = async () => {
     try {
       setLoading(true);
-      const config = await fetchApiConfig(user.uid);
-      const apiKey = config?.newsApiKey;
-      if (!apiKey) throw new Error("Missing News API key");
         
       const res = await fetch(
-        `https://taskaid-backend-8v50.onrender.com/api/news?apikey=${apiKey}&category=${category}&country=${country}`
+        `https://temalith.onrender.com/api/news/${country}/${category}`
       );
       const json = await res.json();
       setArticles(json.articles || []);
