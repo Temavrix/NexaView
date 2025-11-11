@@ -11,7 +11,6 @@ import '../index.css';
 
 const NewsBoard = () => {
   const navigate = useNavigate();
-  const [date, setDate] = useState(new Date());
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -75,7 +74,7 @@ const NewsBoard = () => {
   };
 
   return (
-    <div className="lg:mt-45 mt-5 lg:ml-20 md:mt-30 ml-10 w-[95%] h-screen overflow-auto overflow-x-hidden scrollbar-hide">
+    <div className="lg:mt-45 md:mt-30 mt-5 lg:ml-20 ml-10 w-[95%] h-screen overflow-auto overflow-x-hidden scrollbar-hide">
       <div className="font-sans font-normal text-white text-opacity-90 bg-no-repeat bg-cover antialiased min-h-screen overflow-auto overflow-x-hidden">
         {/* Sidebar */}
         <Sidebar handleLogout={handleLogout} />
@@ -103,7 +102,7 @@ const NewsBoard = () => {
           </div>
         </div>
       </div>
-</div>
+    </div>
 
   );
 };

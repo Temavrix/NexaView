@@ -11,6 +11,7 @@ import WindWid from "./components/Wind.jsx";
 import HumidityWid from "./components/Humidity.jsx";
 import Clouds from "./components/Clouds.jsx";
 import SunTracker from './components/SunPosition.jsx'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const DashBoard = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -19,6 +20,11 @@ const DashBoard = () => {
   const [user, setUser] = useState(null);
   const [todos, setTodos] = useState([]);
   const [task, setTask] = useState('');
+  
+  const backgrounds = [
+  "https://images.unsplash.com/photo-1630387775844-b15d0f769972?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3",
+  "https://images.unsplash.com/photo-1628933978021-818a464f9f5d?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=2069",
+  ];
 
   useEffect(() => {
     async function getWeather() {
@@ -53,15 +59,12 @@ const DashBoard = () => {
         }
         const config = await fetchApiConfig(user.uid);
         const city = config?.city;
-        const apiKey = config?.openWeatherKey;
 
-        if (!city || !apiKey) {
-          throw new Error('City or OpenWeather API key is missing');
+        if (!city) {
+          throw new Error('Please Enter Your City!');
         }
 
-        const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
-        );
+        const response = await fetch(`${BASE_URL}/api/forecast/${city}`);
 
         if (!response.ok) {
           throw new Error("API request failed");
@@ -107,8 +110,8 @@ const DashBoard = () => {
       document.body.style.backgroundPosition = "center";
     } catch (error) {
       console.error('getImage error:', error);
-      document.body.style.backgroundImage =
-        'url("https://images.unsplash.com/photo-1630387775844-b15d0f769972?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")';
+      const randomBg = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+      document.body.style.backgroundImage = `url("${randomBg}")`;
     }
   }
 
@@ -158,7 +161,7 @@ const DashBoard = () => {
   
 
   return (
-    <div className="lg:mt-45 mt-5 lg:ml-20 md:mt-30 ml-10 w-[95%] h-screen overflow-auto scrollbar-hide">
+    <div className="lg:mt-45 md:mt-30 mt-5 lg:ml-20 md:ml-14 ml-10 w-[95%] h-screen overflow-auto scrollbar-hide">
         <div className="font-sans font-normal text-white text-opacity-90 bg-no-repeat bg-cover antialiased min-h-screen overflow-auto">
           {/* Sidebar */}
           <Sidebar handleLogout={handleLogout} />
@@ -167,7 +170,7 @@ const DashBoard = () => {
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 auto-rows-fr w-full">
             <div>
                 {/* Weather Section */}
-                <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-white p-3 sm:p-10 md:p-4 w-full max-w-full mx-auto h-[700px]">
+                <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-white p-3 sm:p-10 md:p-4 w-full max-w-full mx-auto lg:h-[700px] sm:h-[720px]">
                   <div className="todayweather">
                     <h3 className="text-white text-[1.17em] font-bold">{weatherData ? `Weather in ${weatherData.name} :` : "Loading Weather..."}</h3><br />
                       {weatherData && (

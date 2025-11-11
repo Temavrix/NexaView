@@ -33,15 +33,15 @@ const StockCard = () => {
   }, []);
 
   return (
-    <div className="overflow-y-auto max-h-[85vh] stockcard p-14 rounded-lg text-white">
-      <h1 className="text-xl font-bold mb-2">Stock Prices</h1>
-      <div className="overflow-y-auto">
+    <div className="flex flex-col h-full overflow-hidden stockcard p-4 md:p-8 lg:p-14 rounded-lg text-white">
+      <h1 className="text-xl font-bold mb-2 flex-shrink-0">Stock Prices</h1>
+      <div className="overflow-y-auto flex-1">
         {["AAPL", "TSLA", "MSFT", "GOOGL", "NVDA"].map((symbol) => (
-        <div key={symbol} className="newscard border border-white/20 font-bold rounded-lg p-3 m-4 bg-white/10 backdrop-blur-md text-white">
-          <p>
-            {symbol}: {prices[symbol] ?? "Loading..."}
-          </p>
-        </div>
+          <div key={symbol} className="newscard border border-white/20 font-bold rounded-lg p-3 m-4 bg-white/10 backdrop-blur-md text-white">
+            <p>
+              {symbol}: {prices[symbol] ?? "Loading..."}
+            </p>
+          </div>
         ))}
       </div>
     </div>

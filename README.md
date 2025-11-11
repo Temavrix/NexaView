@@ -15,8 +15,7 @@ ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgra
 
 
 <img width="250" alt="Image" src="https://github.com/user-attachments/assets/acb2cd97-49f1-45fd-8972-aea40672ad7c" /> 
-<img width="250" alt="Image" src="https://drive.google.com/file/d/1GyrrzEsgn0_9pXhFQzIKNq29jujsfWGT/view?usp=sharing" /> 
-<img width="250" alt="Image" src="https://drive.google.com/file/d/1Um9GOSdBUS7uMRLFTsVl-mTo5AicDU2Q/view?usp=sharing" /> 
+<img width="250" alt="Image" src="https://github.com/user-attachments/assets/7382748d-848f-4271-8bad-7a919e4de6ac" />
 
 
 
@@ -49,12 +48,23 @@ to help with our organisation's fundings.
 NexaView Changelogs:-
 
 QUALITY UPDATE:-
-1. Redis Cloud has been added to our tech stack under Project Wrapspeed.
-2. Redis database will now assist users to load most frequently used News 
-   Categories and locations (Soon to be upgraded to other features).
-3. Removed the need for users to register GNewsAPI.
-4. Improved styling and layout across various components.
 
+1. REDIS Updates:-
+1.1 With the Successful implementation of Redis for News
+    Headlines we have expanded it to now help users get 
+    Current Weather and Forecast 
+1.2 Removed the need for users to register for GNewsAPI and 
+    OpenWeatherApi.
+
+2. Multi-Factor Authentication:-
+2.1 Added the option for users to Authenticate using 
+    their google account to sign up and login.
+2.2 Improved Sign-up and Login page.
+
+3. UI/UX Changes:-
+3.1 Improved styling and responsiveness across various components.
+
+NOTE: README.md Will be updated in the next update
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -63,10 +73,10 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 02-Novemeber-2025 21:45 HRS (Singapore Standard Time)
+Last Updated: 11-Novemeber-2025 23:45 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
-Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this webpage.
+Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this repository.
 
 
 ## Introducing NexaView
@@ -181,8 +191,8 @@ Thank you for your kind co-operation :-)
 NexaView Copyright (C) Temavrix 2025  
 All Rights Reserved
 
-Version 3.5.2
+Version 3.7.0
 
 
 
-## Built using = <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1"> + <img width="90" height="30" src="https://github.com/user-attachments/assets/b2ff8604-70e9-489c-9eb3-3d5d850169a3">
+## Built With:  <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1"> + <img width="80" height="29" src="https://github.com/user-attachments/assets/b2ff8604-70e9-489c-9eb3-3d5d850169a3">

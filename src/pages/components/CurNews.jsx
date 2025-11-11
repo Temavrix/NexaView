@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchApiConfig } from '../GetApis';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const CurNewsSection = ({ user }) => {
   const [term, setTerm] = useState("");
@@ -16,10 +17,7 @@ const CurNewsSection = ({ user }) => {
     const apiKey = config?.newsApiKey;
     if (!apiKey) throw new Error("Missing News API key");
 
-    // ✅ Correct query parameter usage
-    const res = await fetch(
-      `https://temalith.onrender.com/api/curnews?term=${encodeURIComponent(term)}&apikey=${apiKey}`
-    );
+    const res = await fetch(`${BASE_URL}/api/curnews?term=${encodeURIComponent(term)}&apikey=${apiKey}`);
 
     const json = await res.json();
     setArticles(json.articles || []);

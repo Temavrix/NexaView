@@ -1,4 +1,5 @@
 import { fetchApiConfig } from '../GetApis';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export async function fetchWeather(uid) {
   try {
@@ -6,13 +7,11 @@ export async function fetchWeather(uid) {
     const apiKey = config?.openWeatherKey;
     const city = config?.city;
 
-    if (!apiKey || !city) {
-      throw new Error("City or OpenWeather API key is missing.");
+    if (!city) {
+      throw new Error("Please Enter Your City!");
     }
 
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
-    );
+    const response = await fetch(`${BASE_URL}/api/weather/${city}`);
 
     if (!response.ok) {
       throw new Error("No weather found.");

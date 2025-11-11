@@ -80,8 +80,8 @@ export default function EarthquakeGlobe() {
           onRingClick={(ring) => {
             if (ring.url) window.open(ring.url, "_blank");
           }}
-          width={500}
-          height={500}
+          width={window.innerWidth < 640 ? window.innerWidth * 0.9 : 500}
+          height={window.innerWidth < 640 ? window.innerWidth * 0.9 : 500}
         />
       </div>
     </div>

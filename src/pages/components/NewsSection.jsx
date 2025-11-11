@@ -1,6 +1,5 @@
-// components/NewsSection.jsx
-//https://taskaid-backend-8v50.onrender.com/api/news?apikey=${apiKey}&category=${category}&country=${country}
 import React, { useEffect, useState } from "react";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const NewsSection = ({ user }) => {
   const [country, setCountry] = useState("us");
@@ -12,9 +11,7 @@ const NewsSection = ({ user }) => {
     try {
       setLoading(true);
         
-      const res = await fetch(
-        `https://temalith.onrender.com/api/news/${country}/${category}`
-      );
+      const res = await fetch(`${BASE_URL}/api/news/${country}/${category}`);
       const json = await res.json();
       setArticles(json.articles || []);
     } catch (err) {
@@ -32,14 +29,17 @@ const NewsSection = ({ user }) => {
   }, [user, country, category]);
 
   return (
-    <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-white text-center h-screen max-sm:h-[115vh] p-[1em] w-full max-w-[100%] sm:p-[1.5em] md:p-[2em] lg:p-[3em] lg:h-[1174px] overflow-hidden">
+    <div
+      className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 
+        text-white text-center w-full max-w-full p-[1em] sm:p-[1.5em] md:p-[2em] lg:p-[3em] 
+        rounded-lg  h-[1174px]
+        flex flex-col">
       <h3 className="text-white text-[1.17em] font-bold">News Headlines</h3><br />
       <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center gap-2 sm:gap-4">
         <select
           className="border-none outline-none w-[150px] px-4 py-2 rounded-[24px] bg-black/40 text-white text-[100%]"
           value={country}
-          onChange={(e) => setCountry(e.target.value)}
-        >
+          onChange={(e) => setCountry(e.target.value)}>
           <option value="us">USA</option>
           <option value="sg">Singapore</option>
           <option value="in">India</option>
@@ -47,8 +47,7 @@ const NewsSection = ({ user }) => {
         <select
           className="border-none outline-none px-4 py-2 rounded-[24px] bg-black/40 text-white text-[100%]"
           value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
+          onChange={(e) => setCategory(e.target.value)}>
           <option value="general">General</option>
           <option value="nation">National</option>
           <option value="business">Business</option>

@@ -1,8 +1,8 @@
 import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../firebase'; // adjust the path to your firebase config
+import { db } from '../firebase';
 
 /**
- * Fetches city, country, newsApiKey, and openWeatherKey from Firestore
+ * Fetches city, country and newsApiKey from Firestore
  * @param {string} uid - The user's Firebase UID
  * @returns {Promise<{ city: string, country: string, newsApiKey: string, openWeatherKey: string } | null>}
  */
@@ -19,7 +19,6 @@ export const fetchApiConfig = async (uid) => {
         city: data.city || '',
         country: data.country || '',
         newsApiKey: data.newsApiKey || '',
-        openWeatherKey: data.openWeatherKey || '',
       };
     } else {
       console.warn('Config not found in Firestore');
