@@ -1,14 +1,23 @@
 import React, { useEffect, useMemo, useState } from "react";
 
-export default function SunTracker({
+type SunTrackerProps = {
+  time?: Date | null;
+  live?: boolean;
+  sunriseHour?: number;
+  sunsetHour?: number;
+  width?: number;
+  height?: number;
+};
+
+const SunTracker: React.FC<SunTrackerProps> = ({
   time: timeProp = null,
   live = true,
   sunriseHour = 6.1, // ~6:07 AM
   sunsetHour = 17.3, // ~5:19 PM
   width = 320,
   height = 160,
-}) {
-  const [now, setNow] = useState(() => timeProp || new Date());
+}) => {
+  const [now, setNow] = useState<Date>(() => timeProp || new Date());
 
   useEffect(() => {
     if (timeProp) {
@@ -51,14 +60,25 @@ export default function SunTracker({
 
   return (
     <div className="text-white" style={{ width }}>
-      <div className="flex items-center gap-2 mb-2">
-      </div>
+      <div className="flex items-center gap-2 mb-2"></div>
       <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
         {/* Arc path */}
-        <path d={arcPath} stroke="rgba(255,255,255,0.4)" strokeWidth="2" fill="none" />
+        <path
+          d={arcPath}
+          stroke="rgba(255,255,255,0.4)"
+          strokeWidth="2"
+          fill="none"
+        />
 
         {/* Sun */}
-        <circle cx={sunX} cy={sunY} r={10} fill="#FFD93D" stroke="#FFC83D" strokeWidth="2" />
+        <circle
+          cx={sunX}
+          cy={sunY}
+          r={10}
+          fill="#FFD93D"
+          stroke="#FFC83D"
+          strokeWidth="2"
+        />
       </svg>
       <div className="flex justify-between text-xs mt-[-0.2em] px-1">
         <div className="flex flex-col items-start">
@@ -70,4 +90,6 @@ export default function SunTracker({
       </div>
     </div>
   );
-}
+};
+
+export default SunTracker;

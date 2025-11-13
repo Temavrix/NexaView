@@ -1,0 +1,99 @@
+import React, { useEffect, useState } from "react";
+import { fetchApiConfig } from "../GetApis";
+
+const BASE_URL = (import.meta as any).env.VITE_API_BASE_URL as string;
+
+// Type for user prop
+type CurNewsSectionProps = {
+  user: {
+    uid: string;
+  };
+};
+
+// Minimal type for News API article
+type Article = {
+  title: string;
+  url: string;
+  [key: string]: any; // fallback for extra fields
+};
+
+const CurNewsSection: React.FC<CurNewsSectionProps> = ({ user }) => {
+  const [term, setTerm] = useState<string>("");
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  const getNews = async (): Promise<void> => {
+    if (!term.trim()) {
+      alert(
+        "Please Enter Keyword (Ex. Biden, Tesla, F1) To Get Relevant News Articles Regarding It."
+      );
+      return;
+    }
+
+    try {
+      const config = await fetchApiConfig(user.uid);
+      const apiKey = config?.newsApiKey;
+
+      if (!apiKey) throw new Error("Missing News API key");
+
+      const res = await fetch(
+        `${BASE_URL}/api/curnews?term=${encodeURIComponent(term)}&apikey=${apiKey}`
+      );
+
+      const json = await res.json();
+      setArticles(json.articles || []);
+    } catch (err) {
+      console.error("Error fetching news:", err);
+      setArticles([]);
+    }
+  };
+
+  return (
+    <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-white text-center h-screen max-sm:h-[115vh] p-[1em] w-full max-w-[100%] sm:p-[1.5em] md:p-[2em] lg:p-[3em] lg:h-[1174px] overflow-hidden">
+      <h2 className="text-white text-[1.17em] font-bold">Curated News Articles</h2>
+      <br />
+
+      {/* Search bar */}
+      <div className="flex items-center gap-2 mb-4">
+        <input
+          type="text"
+          value={term}
+          onChange={(e) => setTerm(e.target.value)}
+          placeholder="Enter News Keyword here (Ex. Trump, Gaza, Taylor Swift)"
+          className="flex-1 px-3 py-2 rounded bg-white/20 border border-white/30 focus:outline-none text-white placeholder-gray-300"
+        />
+        <button
+          onClick={getNews}
+          className="px-3 py-2 bg-[#545454] text-white rounded cursor-pointer transition-all duration-200 ease-in-out hover:bg-white/55"
+        >
+          Get News
+        </button>
+      </div>
+
+      {/* News results */}
+      <div className="space-y-3 max-h-[80vh] font-bold text-white text-lg mt-4 overflow-y-auto">
+        {articles.length === 0 ? (
+          <p className="text-gray-300">No news to display. Try searching!</p>
+        ) : (
+          articles.map((article, index) => (
+            <div
+              key={index}
+              className="newscard border border-white/20 font-bold rounded-lg p-3 m-4 bg-white/10 backdrop-blur-md text-white"
+            >
+              <h2 className="font-bold text-lg">{article.title}</h2>
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white font-semibold hover:text-blue-400 transition duration-200 underline"
+              >
+                Click To Read More
+              </a>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default CurNewsSection;

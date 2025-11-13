@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { auth } from './firebase.jsx';
 import NexaView from "./pages/assets/NexaView.png";
 import Google from "./pages/assets/Googlelogo.png";
+import {useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -10,6 +11,7 @@ import {
 } from 'firebase/auth';
 
 export default function Auth({ onUser }) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
@@ -66,7 +68,7 @@ export default function Auth({ onUser }) {
       {/* Sidebar */}
       <div className="fixed top-0 left-0 h-screen w-[70px] sm:w-[80px] bg-black/70 backdrop-blur-md z-50 flex flex-col items-center justify-between py-6">
         <img className="h-[50px] w-[50px]" src={NexaView} alt="Icon" />
-        <a href="https://github.com/Temavrix/NexaView" title="About Us">
+        <a onClick={() => navigate("/AboutUs")} title="About Us">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" className="h-[35px] w-[35px] lg:mb-0 mb-20 fill-white">
             <path d="M48 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM0 192c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 256 32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0 0-224-32 0c-17.7 0-32-14.3-32-32z"/>
           </svg>

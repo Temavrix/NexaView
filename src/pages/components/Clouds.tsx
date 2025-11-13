@@ -1,13 +1,23 @@
-const HumidityWidget = ({ humidity }) => {
+import React from "react";
+
+interface CloudWidgetProps {
+  cloud: number;
+}
+
+const CloudWidget: React.FC<CloudWidgetProps> = ({ cloud }) => {
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
-  const progress = (humidity / 100) * circumference;
+  const progress = (cloud / 100) * circumference;
 
   return (
     <div style={{ textAlign: "center", color: "#fff", fontFamily: "Arial" }}>
-      <h4>Humidity</h4>
+      <h4>Clouds</h4>
 
-      <svg width="140" height="140" style={{ transform: "rotate(-90deg)" }}>
+      <svg
+        width="140"
+        height="140"
+        style={{ transform: "rotate(-90deg)", transformOrigin: "center center" }}
+      >
         {/* Background Circle */}
         <circle
           cx="70"
@@ -27,6 +37,9 @@ const HumidityWidget = ({ humidity }) => {
           fill="none"
           strokeDasharray={`${progress} ${circumference}`}
           strokeLinecap="round"
+          style={{
+            transition: "stroke-dasharray 0.8s ease",
+          }}
         />
       </svg>
 
@@ -39,18 +52,20 @@ const HumidityWidget = ({ humidity }) => {
           fontWeight: "bold",
         }}
       >
-        {humidity}%
+        {cloud}%
       </div>
     </div>
   );
 };
 
-// Example usage
-export default function HumidityWid({ humidity }) {
-  // Sample OpenWeatherAPI humidity data
+interface CloudsProps {
+  cloud: number;
+}
+
+const Clouds: React.FC<CloudsProps> = ({ cloud }) => {
   const weatherData = {
-    main: {
-      humidity, // %
+    clouds: {
+      all: cloud, // OpenWeather puts cloud % inside clouds.all
     },
   };
 
@@ -61,8 +76,11 @@ export default function HumidityWid({ humidity }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-      }}>
-      <HumidityWidget humidity={weatherData.main.humidity} />
+      }}
+    >
+      <CloudWidget cloud={weatherData.clouds.all} />
     </div>
   );
-}
+};
+
+export default Clouds;

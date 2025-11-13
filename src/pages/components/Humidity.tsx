@@ -1,13 +1,23 @@
-const CloudWidget = ({ cloud }) => {
+import React from "react";
+
+interface HumidityWidgetProps {
+  humidity: number;
+}
+
+const HumidityWidget: React.FC<HumidityWidgetProps> = ({ humidity }) => {
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
-  const progress = (cloud / 100) * circumference;
+  const progress = (humidity / 100) * circumference;
 
   return (
     <div style={{ textAlign: "center", color: "#fff", fontFamily: "Arial" }}>
-      <h4>Clouds</h4>
+      <h4>Humidity</h4>
 
-      <svg width="140" height="140" style={{ transform: "rotate(-90deg)" }}>
+      <svg
+        width="140"
+        height="140"
+        style={{ transform: "rotate(-90deg)", transformOrigin: "center center" }}
+      >
         {/* Background Circle */}
         <circle
           cx="70"
@@ -17,6 +27,7 @@ const CloudWidget = ({ cloud }) => {
           strokeWidth="12"
           fill="none"
         />
+
         {/* Progress Circle */}
         <circle
           cx="70"
@@ -27,6 +38,9 @@ const CloudWidget = ({ cloud }) => {
           fill="none"
           strokeDasharray={`${progress} ${circumference}`}
           strokeLinecap="round"
+          style={{
+            transition: "stroke-dasharray 0.8s ease",
+          }}
         />
       </svg>
 
@@ -39,18 +53,20 @@ const CloudWidget = ({ cloud }) => {
           fontWeight: "bold",
         }}
       >
-        {cloud}%
+        {humidity}%
       </div>
     </div>
   );
 };
 
-// Example usage
-export default function Clouds({ cloud }) {
-  // Sample OpenWeatherAPI cloud data
+interface HumidityWidProps {
+  humidity: number;
+}
+
+const HumidityWid: React.FC<HumidityWidProps> = ({ humidity }) => {
   const weatherData = {
-    clouds: {
-      all: cloud, // OpenWeather puts cloud % inside clouds.all
+    main: {
+      humidity, // OpenWeather humidity %
     },
   };
 
@@ -63,7 +79,9 @@ export default function Clouds({ cloud }) {
         alignItems: "center",
       }}
     >
-      <CloudWidget cloud={weatherData.clouds.all} />
+      <HumidityWidget humidity={weatherData.main.humidity} />
     </div>
   );
-}
+};
+
+export default HumidityWid;

@@ -9,13 +9,21 @@
 
 ## Our Project is now live: [NexaView](https://nexaview.netlify.app/)
 
+## Built With:  <img width ="20" height="20" src="./src/pages/assets/react.svg"> + <img width="20" height="20" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="20" height="20" src="https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1"> + <img width="60" height="20" src="https://github.com/user-attachments/assets/b2ff8604-70e9-489c-9eb3-3d5d850169a3">
+
 **This Program Is CPU-Intensive Please Make Sure That You're Using A Mid To High Range PC.**
 
 ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgrading of Infrasturcture and Services) for users wishing to go back to the Vanilla Js version head to: [Commit 0b9d90](https://github.com/Temavrix/NexaView/tree/0b9d90cb93b83920100099202fe27f8b99fd7efa)
 
+##### Desktop:
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/acb2cd97-49f1-45fd-8972-aea40672ad7c" /> 
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/bc734942-f077-45f3-9111-b736a6601f3f" /> 
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/7382748d-848f-4271-8bad-7a919e4de6ac" />
 
-<img width="250" alt="Image" src="https://github.com/user-attachments/assets/acb2cd97-49f1-45fd-8972-aea40672ad7c" /> 
-<img width="250" alt="Image" src="https://github.com/user-attachments/assets/7382748d-848f-4271-8bad-7a919e4de6ac" />
+##### Mobile:
+<img width="80" alt="Image" src="https://github.com/user-attachments/assets/fe379479-7911-46a0-8896-6658a3b6496e" />
+<img width="80" alt="Image" src="https://github.com/user-attachments/assets/aec1af39-0981-4b63-97b2-c4165e98b417" />
+
 
 
 
@@ -23,7 +31,7 @@ ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgra
 - [What's New?](#whats-new)
 - [Introduction to NexaView](#introducing-nexaview)
 - [Running NexaView On Your Computer](#running-nexaview-on-your-local-computer)
-- [What APIs Should I Subscribe To?](#what-apis-should-i-subscribe-to)
+- [What APIs Does NexaView Use?](#what-apis-does-nexaview-use)
    * [Where Do I Paste The APIs?](#where-do-i-paste-the-apis)
 - [How Firebase Handles Your Data?](#how-your-data-is-handled-with-firebase)
    * [Private Firebase Database For Devs](#for-devs-who-want-to-have-a-private-firebase-database)
@@ -49,20 +57,25 @@ NexaView Changelogs:-
 
 QUALITY UPDATE:-
 
-1. REDIS Updates:-
-1.1 With the Successful implementation of Redis for News
-    Headlines we have expanded it to now help users get 
+1. Typescript Support:-
+1.1 Updated several files to Typescript under project WrapSpeed.
+
+2. REDIS Updates:-
+2.1 With the Successful implementation of Redis under project WrapSpeed 
+    for News Headlines we have expanded it to now help users get 
     Current Weather and Forecast 
-1.2 Removed the need for users to register for GNewsAPI and 
+2.2 Removed the need for users to register for GNewsAPI and 
     OpenWeatherApi.
 
-2. Multi-Factor Authentication:-
-2.1 Added the option for users to Authenticate using 
+3. Multi-Factor Authentication:-
+3.1 Added the option for users to Authenticate using 
     their google account to sign up and login.
-2.2 Improved Sign-up and Login page.
+3.2 Improved Sign-up and Login page.
 
-3. UI/UX Changes:-
-3.1 Improved styling and responsiveness across various components.
+4. UI/UX Changes:-
+4.1 Improved styling and responsiveness across various components.
+4.2 Improved Messaging and Signalling.
+4.3 New About-Us page!!!
 
 NOTE: README.md Will be updated in the next update
 
@@ -73,15 +86,15 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 11-Novemeber-2025 23:45 HRS (Singapore Standard Time)
+Last Updated: 13-Novemeber-2025 19:50 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this repository.
 
 
 ## Introducing NexaView
-NexaView is an all-in-one web-based Dashboard to get essential day-to-day information such as current weather, weather forecast, global news headlines and store To-do tasks for users.  
-This product is built primarily using React JS as the frontend framework and Firebase as the backend database to store and retrieve user's information. 
+NexaView is an all-in-one web-based Dashboard to get essential day-to-day information such as current weather, weather forecast, global news headlines, store To-do tasks and more for users.   
+This product is built primarily using React JS as the frontend framework, Redis for caching data and Firebase as the backend database to store and retrieve user's information. 
 
 
 ## Running NexaView On Your Local Computer
@@ -98,41 +111,63 @@ Once the command is executed you will get the following output. You will need to
 npm run dev
 
 > package.json@0.0.0 dev
-> vite
+> vite --host
 
-  VITE v6.2.6  ready in 195 ms
+  VITE v6.3.6  ready in 497 ms
 
   ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
+  ➜  Network: http://192.***.1.5:5173/
   ➜  press h + enter to show help
 ```
 Now you can enjoy using the web-app.
 
-## What APIs Should I Subscribe To?
-Upon opening, by default you can track your To-Do tasks so it is best to activate an API. Users should then copy the API key and paste it in the respective input-bars present in the settings page (accessible through the taskbar on the left side). 
+## What APIs Does NexaView Use?
+Upon opening, by default you can get Weather, Weather Forecast info, News Headlines thanks to Redis caching and also track To-Do tasks in Firebase hence it is best to activate an API to get Curated news and Live changing Background Wallpaper (If you mind about the lack of wallpapers).  
 
-To do that users will need to head to and register for the following API services :
+Users could copy the API key and paste it in the respective input-bars present in the settings page (accessible through the taskbar on the left side). 
 
-1. https://openweathermap.org/ : For NexaView to get current weather information and weather forecast for your city and display in WeatherCard.  
-   <img width="149" src="https://github.com/user-attachments/assets/bb66c0eb-d41f-442b-bc3c-59b7380638c6"> <img width="150" src="https://github.com/user-attachments/assets/9d827f8d-ae1b-41d4-8859-04867e3392de">
+### Main NexaView Features
+Nexaview uses mainly these Apis to help improve User's experience :
 
-2. https://gnews.io/ : For NexaView to get current news headlines for your country (chosen in the drop-down list) and display it for you in the NewsCard.   
-   <img width="150" src="https://github.com/user-attachments/assets/bf297798-f784-4cfc-a90c-13a5267fcc69"> <img width="150" src="https://github.com/user-attachments/assets/a5a57409-bdce-465c-9278-633869cfcabe"> 
+1. https://openweathermap.org/ : If not stored in Redis previously then NexaView uses this to   get current weather information and weather forecast for your city and display in WeatherCard.  
+   <img width="150" alt="Image" src="https://github.com/user-attachments/assets/1025fa05-ac6f-4e80-875a-59f921c71802" /> <img width="150" alt="Image" src="https://github.com/user-attachments/assets/95b4d882-f1bd-488b-8f35-a7122a8a4c3a" />
+
+2. https://gnews.io/ : If not stored in Redis previously then NexaView uses this to get current news headlines for your country (chosen in the drop-down list) and display it for you in the NewsCard.   
+   <img width="150" alt="Image" src="https://github.com/user-attachments/assets/cb50f616-7117-4b36-9b54-c0b4081795bf" /> <img width="150" alt="Image" src="https://github.com/user-attachments/assets/35d245f5-8d0b-414c-aca1-2d5079db5f0a" />
 
 3. https://unsplash.com/developers : For NexaView to get a random background image which is based on your city.
 
    #### Where Do I Paste The APIs?
-   <img width="200" src="https://github.com/user-attachments/assets/45bd5732-ae4a-447d-a390-b532d9d144c7">
+   <img width="200" alt="Image" src="https://github.com/user-attachments/assets/43a33e39-aa7d-48cf-a273-d9e332f1be6b" />
    
    Users should then copy the API key and paste it in the respective input-bars present in the settings page (accessible through the taskbar on the left side).
 
 
+
+## Other Functions Available
+Apart from APIs to retreive information NexaView also comes with some more functionalities for users to use:-
+1. Tasks-Tracker:  
+NexaView allows you to track tasks which will be stored in FireBase to prevent erasure of tasks if you exit or if you had reloaded the page.  
+   <img width="100"  alt="Image" src="https://github.com/user-attachments/assets/2c0ad27d-d79d-43e3-8324-a954ee306e75" />
+   
+2. Calender:  
+NexaView has an in-built calander.  
+   <img width="150" alt="Image" src="https://github.com/user-attachments/assets/a9877bd8-208a-4cd2-bee1-b5a91c307b93" />
+
+3. Latest Natural Disasters:  
+You can visualize recent natural disasters with the help of a globe.  
+   <img width="150" alt="Image" src="https://github.com/user-attachments/assets/df8fca87-f408-41cf-85e0-df23c2bbe84b" />
+
+4. Current Stock-Price Viewer
+
+
+
 ## How Your Data Is Handled With Firebase?
-In NexaView only your Api-keys and your To-Do tasks are saved in the database for easy retrieval. All these information are saved under the E-Mail address which is used for registering in the login page at the start.
+In NexaView only your Api-keys and your To-Do tasks are saved in the database for easy retrieval. All these information are saved under the E-Mail address or Google Gmail address which is used for registering in the login page at the start.
 
-<img width="250" src="https://github.com/user-attachments/assets/98e87416-f183-4b11-a7c0-af1fc56c5e22">
+<img width="300" alt="Image" src="https://github.com/user-attachments/assets/4d9ec621-24d4-4fff-87cd-0c28f066e432" />  
 
-Once registered User's Apikeys in the settings page and To-Do list in the Taskcard will be stored in Firestore database as shown below.
+Once users had registered their Apikeys in the settings page then the user's To-Do will be stored in Firestore database as shown below.
 
 <img width="500" src="https://github.com/user-attachments/assets/047b8404-70ee-41e4-b551-541939b5e178">
 
@@ -160,21 +195,8 @@ Once registered User's Apikeys in the settings page and To-Do list in the Taskca
    ```
 
 
-
-## Other Functions Available
-Apart from APIs to retreive information NexaView also comes with some more functionalities for users to use:-
-1. Tasks-Tracker:  
-NexaView allows you to track tasks which will be stored in FireBase to prevent erasing the tasks if you exit or reloaad the page.  
-   <img width="100" alt="tasks" src="https://github.com/user-attachments/assets/507d6884-4077-435c-a171-5bbdaa511c27">  
-   
-2. Calender:  
-NexaView has an in-built calander which allows you to see what day and date it is.  
-   <img width="100" alt="calender" src="https://github.com/user-attachments/assets/8be73a88-4506-4e0f-9e1a-d332ce7d3b24">
-
-
 ## Issues
 As this project is still in constant development, if you run into any issues while operating or have any suggestions or features, please feel free to drop by our [issues](https://github.com/Temavrix/NexaView/issues) section and open a issue and we'll respond within 2-4 working days, Thank you for your understanding.
-
 
 ## License
 
@@ -191,8 +213,4 @@ Thank you for your kind co-operation :-)
 NexaView Copyright (C) Temavrix 2025  
 All Rights Reserved
 
-Version 3.7.0
-
-
-
-## Built With:  <img width ="30" height="30" src="./src/pages/assets/react.svg"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="30" height="30" src="https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1"> + <img width="80" height="29" src="https://github.com/user-attachments/assets/b2ff8604-70e9-489c-9eb3-3d5d850169a3">
+Version 3.8.0

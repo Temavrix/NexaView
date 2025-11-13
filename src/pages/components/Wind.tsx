@@ -1,4 +1,16 @@
-const WindWidget = ({ wind }) => {
+import React from "react";
+
+interface WindData {
+  speed: number; // meters per second
+  deg: number;   // wind direction in degrees
+  gust?: number; // optional gust speed
+}
+
+interface WindWidgetProps {
+  wind: WindData;
+}
+
+const WindWidget: React.FC<WindWidgetProps> = ({ wind }) => {
   const speedKmh = (wind.speed * 3.6).toFixed(1); // convert m/s → km/h
   const deg = wind.deg;
 
@@ -14,7 +26,11 @@ const WindWidget = ({ wind }) => {
     <div style={{ textAlign: "center", color: "#fff", fontFamily: "Arial" }}>
       <h4>Wind</h4>
 
-      <svg width="140" height="140" style={{ transform: "rotate(-90deg)" }}>
+      <svg
+        width="140"
+        height="140"
+        style={{ transform: "rotate(-90deg)", transformOrigin: "center center" }}
+      >
         {/* Background Circle */}
         <circle
           cx="70"
@@ -24,7 +40,7 @@ const WindWidget = ({ wind }) => {
           strokeWidth="12"
           fill="none"
         />
-        {/* Progress Arc (white fill up to degree) */}
+        {/* Progress Arc */}
         <circle
           cx="70"
           cy="70"
@@ -34,10 +50,11 @@ const WindWidget = ({ wind }) => {
           fill="none"
           strokeDasharray={`${progress} ${circumference}`}
           strokeLinecap="round"
+          style={{ transition: "stroke-dasharray 0.8s ease" }}
         />
       </svg>
 
-      {/* Text inside circle (not rotated) */}
+      {/* Wind direction text */}
       <div
         style={{
           position: "relative",
@@ -49,21 +66,28 @@ const WindWidget = ({ wind }) => {
         {deg}° <br /> {compass}
       </div>
 
-      {/* Wind Speed */}
-      <div style={{ marginTop: "-20px", fontSize: "20px", fontWeight: "bold" }}>
+      {/* Wind speed */}
+      <div
+        style={{
+          marginTop: "-20px",
+          fontSize: "20px",
+          fontWeight: "bold",
+        }}
+      >
         {speedKmh} km/h
       </div>
     </div>
   );
 };
 
+interface WindWidProps {
+  speed: number;
+  deg: number;
+  gust?: number;
+}
 
-export default function WindWid({ speed, deg, gust }) {
-  const windData = {
-    speed,
-    deg,
-    gust,
-  };
+const WindWid: React.FC<WindWidProps> = ({ speed, deg, gust }) => {
+  const windData: WindData = { speed, deg, gust };
 
   return (
     <div
@@ -77,4 +101,6 @@ export default function WindWid({ speed, deg, gust }) {
       <WindWidget wind={windData} />
     </div>
   );
-}
+};
+
+export default WindWid;

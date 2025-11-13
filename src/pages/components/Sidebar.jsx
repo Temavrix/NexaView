@@ -2,7 +2,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import NexaView from "../assets/NexaView.png";
 import dash from "../assets/dash.png";
 import sett from "../assets/settings.png";
-import about from "../assets/about.png";
 import log from "../assets/logout.png";
 import newsImg from "../assets/news.png";
 
@@ -99,15 +98,15 @@ export default function Sidebar({ handleLogout }) {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex justify-center -mb-15 sm:mb-5">
+      <div className="flex justify-center -mb-15 sm:mb-5 cursor-pointer">
         { isDashboardPage ? (
-            <a href="https://github.com/Temavrix/NexaView" title="About Us">
+            <a onClick={() => navigate("/AboutUs")} title="About Us">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" className="h-[35px] w-[35px] lg:mb-0 mb-20 fill-white">
             <path d="M48 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM0 192c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 256 32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0 0-224-32 0c-17.7 0-32-14.3-32-32z"/>
           </svg>
             </a>
         ):(
-            <a href="https://github.com/Temavrix/NexaView" title="About Us">
+            <a onClick={() => navigate("/AboutUs")} title="About Us">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" className="h-[35px] w-[35px] lg:mb-0 mb-20 fill-white">
             <path d="M48 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM0 192c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 256 32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0 0-224-32 0c-17.7 0-32-14.3-32-32z"/>
           </svg>

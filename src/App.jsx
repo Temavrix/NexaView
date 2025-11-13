@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import DashBoard from './pages/Dashboard';
 import Settings from './pages/Settings';
 import NewsBoard from './pages/Newsboard';
+import AboutUs from "./pages/AboutUs";
 import Auth from './Auth';
 
 const App = () => {
@@ -32,15 +33,17 @@ const App = () => {
     <Router>
       <div style={{ padding: '2rem' }}>
         <Routes>
-          {!user ? (
-            <Route path="*" element={<Auth onUser={setUser} />} />
-          ) : (
-            <>
-              <Route path="/" element={<DashBoard user={user} />} />
-              <Route path="/settings" element={<Settings user={user} />} />
-              <Route path="/Newsboard" element={<NewsBoard user={user} />} />
-              <Route path="*" element={<Navigate to="/" />} />
-            </>
+          {/* Public route - accessible to everyone */}
+          <Route path="/AboutUs" element={<AboutUs user={user} />} />
+          
+          {/* Authenticated routes */}
+              {!user ? ( <Route path="*" element={<Auth onUser={setUser} />} /> 
+              ) : ( 
+              <> 
+              <Route path="/" element={<DashBoard user={user} />} /> 
+              <Route path="/settings" element={<Settings user={user} />} /> 
+              <Route path="/Newsboard" element={<NewsBoard user={user} />} /> 
+              <Route path="*" element={<Navigate to="/" />} /> </>
           )}
         </Routes>
       </div>
