@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { auth } from './firebase.jsx';
 import NexaView from "./pages/assets/NexaView.png";
 import Google from "./pages/assets/Googlelogo.png";
+import Github from "./pages/assets/Githublogo.png";
 import {useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
+  GithubAuthProvider,
+  signInWithRedirect ,
   signInWithPopup
 } from 'firebase/auth';
 
@@ -16,6 +19,7 @@ export default function Auth({ onUser }) {
   const [password, setPassword] = useState('');
   const [isLogin, setIsLogin] = useState(true);
 
+  
   // -------------------------------
   // Email/Password Auth
   // -------------------------------
@@ -60,6 +64,32 @@ export default function Auth({ onUser }) {
     }
   };
 
+  const handleGithubSignIn = async () => {
+    const provider = new GithubAuthProvider();
+    
+    // Force fresh login every single time
+    await auth.signOut();
+    sessionStorage.clear();
+    localStorage.removeItem("firebase:authUser");
+    
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    
+    try {
+      if (isMobile) {
+        // Mobile → Redirect mode (works 100%)
+        await signInWithRedirect(auth, provider);
+      } else {
+        // Desktop → Popup mode
+        const result = await signInWithPopup(auth, provider);
+        onUser(result.user);
+      }
+    } catch (err) {
+      console.error("GitHub sign-in error:", err);
+      alert("GitHub sign-in failed. Please try again.");
+    }
+  };
+
+
   return (
     <div
       className="min-h-screen w-full bg-gradient-to-br from-black to-gray-600 text-white overflow-hidden fixed inset-0"
@@ -76,10 +106,10 @@ export default function Auth({ onUser }) {
       </div>
 
       {/* Main Content */}
-      <div className="ml-[60px] sm:mt-40 sm:ml-[80px] flex items-center justify-center max-h-screen p-4">
+      <div className="ml-[60px] sm:mt-50 sm:ml-[80px] h-[797px] flex items-center justify-center max-h-screen p-4">
         <div className="w-full max-w-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 rounded-3xl p-8 sm:p-12 text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Welcome To NexaView</h1>
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-8">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-4">NexaView</h1>
+          <h2 className="text-2xl sm:text-3xl  mb-8">
             {isLogin ? "Login" : "Sign Up"}
           </h2>
 
@@ -88,17 +118,17 @@ export default function Auth({ onUser }) {
             <div>
               <label className="block text-white text-lg sm:text-xl mb-2">E-mail</label>
               <input type="email"
-                className="w-full px-5 py-3 rounded-full bg-white/30 text-white text-base sm:text-lg text-center outline-none"
+                className="w-full px-1 py-2 rounded-full bg-white/30 text-white text-base sm:text-lg text-center outline-none"
                 value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required />
             </div>
             <div>
               <label className="block text-white text-lg sm:text-xl mb-2">Password</label>
               <input type="password"
-                className="w-full px-5 py-3 rounded-full bg-white/30 text-white text-base sm:text-lg text-center outline-none"
+                className="w-full px-1 py-2 rounded-full bg-white/30 text-white text-base sm:text-lg text-center outline-none"
                 value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
             </div>
 
-            <button type="submit" className="w-full px-5 py-3 rounded-full bg-white/40 text-white text-lg font-semibold hover:bg-white/60 transition">
+            <button type="submit" className="w-full px-1 py-1 rounded-full bg-white/40 text-white text-lg font-semibold hover:bg-white/60 transition">
               {isLogin ? "Login" : "Sign Up"}
             </button>
           </form>
@@ -112,13 +142,18 @@ export default function Auth({ onUser }) {
 
           {/* Google Sign-In Button */}
           <button onClick={handleGoogleSignIn}
-            className="w-full px- py-2 rounded-full bg-[#4285F4] text-white text-lg font-semibold hover:bg-[#357ae8] transition flex items-center justify-center space-x-2">
+            className="w-full px-1 py-1 rounded-full bg-[#4285F4] text-white text-lg font-semibold hover:bg-[#357ae8] transition flex items-center justify-center space-x-2">
             <img src={Google} alt="Google" className="h-10 w-10 bg-black rounded-full p-1"/>
             <span>Continue with Google</span>
           </button>
 
+          <button onClick={handleGithubSignIn} className="w-full mt-2 px-1 py-1 rounded-full bg-[#24292F] text-white text-lg font-semibold hover:bg-[#1b1f23] transition flex items-center justify-center space-x-2">
+            <img src={Github} alt="Google" className="h-10 w-10 bg-black rounded-full p-1"/>
+            <span>Continue with GitHub</span>
+          </button>
+
           {/* Switch to Login/Signup */}
-          <button onClick={() => setIsLogin(!isLogin)} className="mt-6 w-full px-5 py-3 rounded-full bg-white/30 text-white text-lg font-semibold hover:bg-white/50 transition">
+          <button onClick={() => setIsLogin(!isLogin)} className="mt-6 w-full px-1 py-1 rounded-full bg-white/30 text-white text-lg font-semibold hover:bg-white/50 transition">
             Switch to {isLogin ? "Sign Up" : "Login"}
           </button>
 

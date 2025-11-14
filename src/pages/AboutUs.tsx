@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar";
-import { db, auth } from "../firebase";
-import { signOut, onAuthStateChanged, User } from "firebase/auth";
+import { signOut, getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Aboutus: React.FC = () => {
     const backgrounds = [
@@ -9,13 +9,16 @@ const Aboutus: React.FC = () => {
     "https://images.unsplash.com/photo-1628933978021-818a464f9f5d?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=2069",
     ];
 
+    const navigate = useNavigate();
+
     const randomBg =
         backgrounds[Math.floor(Math.random() * backgrounds.length)];
       document.body.style.backgroundImage = `url("${randomBg}")`;
 
       const handleLogout = async () => {
+        const auth = getAuth();
         await signOut(auth);
-        window.location.reload();
+        navigate("/");
       };
 
     return(
@@ -60,7 +63,7 @@ const Aboutus: React.FC = () => {
                 </div>
 
                 <div className="mt-10">
-                  Version 3.8.0
+                  Version 3.8.2
                 </div>
             </div>
         </div>

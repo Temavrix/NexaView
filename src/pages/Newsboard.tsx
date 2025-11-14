@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import { signOut, onAuthStateChanged, User } from "firebase/auth";
+import { signOut, onAuthStateChanged, User, getAuth } from "firebase/auth";
 import { auth } from "../firebase";
 import NewsSection from "./components/NewsSection";
 import CurNewsSection from "./components/CurNews";
@@ -69,8 +69,9 @@ const NewsBoard: React.FC = () => {
   }
 
   const handleLogout = async () => {
+    const auth = getAuth();
     await signOut(auth);
-    navigate("/login");
+    navigate("/");
   };
 
   return (

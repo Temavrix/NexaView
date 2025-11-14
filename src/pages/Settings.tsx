@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { db, auth } from "../firebase";
 import Sidebar from "./components/Sidebar";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { signOut, onAuthStateChanged, User } from "firebase/auth";
+import { signOut, onAuthStateChanged, User, getAuth } from "firebase/auth";
 import "./Settings.css";
 
 interface ApiConfig {
@@ -71,6 +71,7 @@ const Settings: React.FC = () => {
 
   // 🔹 Logout handler
   const handleLogout = async () => {
+    const auth = getAuth();
     await signOut(auth);
     window.location.reload();
   };

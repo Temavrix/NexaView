@@ -69,12 +69,14 @@ QUALITY UPDATE:-
 
 3. Multi-Factor Authentication:-
 3.1 Added the option for users to Authenticate using 
-    their google account to sign up and login.
+    their Google account to sign up and login.
+3.2 Added the option for users to Authenticate using 
+    their Github account to sign up and login.
 3.2 Improved Sign-up and Login page.
 
 4. UI/UX Changes:-
 4.1 Improved styling and responsiveness across various components.
-4.2 Improved Messaging and Signalling.
+4.2 Improved Messaging, Signalling and Redirecting.
 4.3 New About-Us page!!!
 
 NOTE: README.md Will be updated in the next update
@@ -163,9 +165,12 @@ You can visualize recent natural disasters with the help of a globe.
 
 
 ## How Your Data Is Handled With Firebase?
-In NexaView only your Api-keys and your To-Do tasks are saved in the database for easy retrieval. All these information are saved under the E-Mail address or Google Gmail address which is used for registering in the login page at the start.
+In NexaView only your Api-keys and your To-Do tasks are saved in the database for easy retrieval. All these information are saved under the E-Mail address or Google Gmail address or Github Authentication which can be used for registering in the login page at the start.
 
-<img width="300" alt="Image" src="https://github.com/user-attachments/assets/4d9ec621-24d4-4fff-87cd-0c28f066e432" />  
+<img width="300" alt="Image" src="https://github.com/user-attachments/assets/fca40cd6-6d17-44a7-a115-1723d1888384" />
+
+
+NOTE: For users who have logged in using Github and want to unlink their account you can head to [Authorized-OAuth-Apps](https://github.com/settings/applications) to revoke the app.
 
 Once users had registered their Apikeys in the settings page then the user's To-Do will be stored in Firestore database as shown below.
 
@@ -213,4 +218,4 @@ Thank you for your kind co-operation :-)
 NexaView Copyright (C) Temavrix 2025  
 All Rights Reserved
 
-Version 3.8.0
+Version 3.8.2
