@@ -63,22 +63,10 @@ const SunTracker: React.FC<SunTrackerProps> = ({
       <div className="flex items-center gap-2 mb-2"></div>
       <svg width={width} height={height} viewBox={`0 0 ${width} ${height}`}>
         {/* Arc path */}
-        <path
-          d={arcPath}
-          stroke="rgba(255,255,255,0.4)"
-          strokeWidth="2"
-          fill="none"
-        />
+        <path d={arcPath} stroke="rgba(255,255,255,0.4)" strokeWidth="2" fill="none" />
 
         {/* Sun */}
-        <circle
-          cx={sunX}
-          cy={sunY}
-          r={10}
-          fill="#FFD93D"
-          stroke="#FFC83D"
-          strokeWidth="2"
-        />
+        <circle cx={sunX} cy={sunY} r={10} fill="#FFD93D" stroke="#FFC83D" strokeWidth="2"/>
       </svg>
       <div className="flex justify-between text-xs mt-[-0.2em] px-1">
         <div className="flex flex-col items-start">

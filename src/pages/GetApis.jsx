@@ -4,8 +4,9 @@ import { db } from '../firebase';
 /**
  * Fetches city, country and newsApiKey from Firestore
  * @param {string} uid - The user's Firebase UID
- * @returns {Promise<{ city: string, country: string, newsApiKey: string, openWeatherKey: string } | null>}
+ * @returns {Promise<{ newsApiKey: string, city: string, unsplashApi: string } | null>}
  */
+
 export const fetchApiConfig = async (uid) => {
   if (!uid) throw new Error('User UID is required to fetch config');
 
@@ -17,7 +18,7 @@ export const fetchApiConfig = async (uid) => {
       const data = snap.data();
       return {
         city: data.city || '',
-        country: data.country || '',
+        unsplashApi: data.unsplashApi || '',
         newsApiKey: data.newsApiKey || '',
       };
     } else {

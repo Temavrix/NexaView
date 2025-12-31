@@ -6,6 +6,7 @@ import DashBoard from './pages/Dashboard';
 import Settings from './pages/Settings';
 import NewsBoard from './pages/Newsboard';
 import AboutUs from "./pages/AboutUs";
+import CalaBoard from './pages/Calaboard';
 import Auth from './Auth';
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
       setAuthChecked(true);
     });
 
-    return () => unsubscribe(); // Clean up listener on unmount
+    return () => unsubscribe();
   }, []);
 
   if (!authChecked) return <p>Loading...</p>;
@@ -41,8 +42,9 @@ const App = () => {
               ) : ( 
               <> 
               <Route path="/" element={<DashBoard user={user} />} /> 
-              <Route path="/settings" element={<Settings user={user} />} /> 
+              <Route path="/Calaboard" element={<CalaBoard user={user} />} /> 
               <Route path="/Newsboard" element={<NewsBoard user={user} />} /> 
+              <Route path="/settings" element={<Settings user={user} />} /> 
               <Route path="*" element={<Navigate to="/" />} /> </>
           )}
         </Routes>

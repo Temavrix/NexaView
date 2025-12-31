@@ -26,54 +26,20 @@ const WindWidget: React.FC<WindWidgetProps> = ({ wind }) => {
     <div style={{ textAlign: "center", color: "#fff", fontFamily: "Arial" }}>
       <h4>Wind</h4>
 
-      <svg
-        width="140"
-        height="140"
-        style={{ transform: "rotate(-90deg)", transformOrigin: "center center" }}
-      >
+      <svg width="140" height="140" style={{ transform: "rotate(-90deg)", transformOrigin: "center center" }}>
         {/* Background Circle */}
-        <circle
-          cx="70"
-          cy="70"
-          r={radius}
-          stroke="rgba(255,255,255,0.2)"
-          strokeWidth="12"
-          fill="none"
-        />
+        <circle cx="70" cy="70" r={radius} stroke="rgba(255,255,255,0.2)" strokeWidth="12" fill="none"/>
         {/* Progress Arc */}
-        <circle
-          cx="70"
-          cy="70"
-          r={radius}
-          stroke="white"
-          strokeWidth="12"
-          fill="none"
-          strokeDasharray={`${progress} ${circumference}`}
-          strokeLinecap="round"
-          style={{ transition: "stroke-dasharray 0.8s ease" }}
-        />
+        <circle cx="70" cy="70" r={radius} stroke="white" strokeWidth="12" fill="none" strokeDasharray={`${progress} ${circumference}`} strokeLinecap="round" style={{ transition: "stroke-dasharray 0.8s ease" }}/>
       </svg>
 
       {/* Wind direction text */}
-      <div
-        style={{
-          position: "relative",
-          top: "-95px",
-          fontSize: "18px",
-          textAlign: "center",
-        }}
-      >
+      <div style={{ position: "relative", top: "-95px", fontSize: "18px", textAlign: "center", }}>
         {deg}° <br /> {compass}
       </div>
 
       {/* Wind speed */}
-      <div
-        style={{
-          marginTop: "-20px",
-          fontSize: "20px",
-          fontWeight: "bold",
-        }}
-      >
+      <div style={{ marginTop: "-20px", fontSize: "20px", fontWeight: "bold", }}>
         {speedKmh} km/h
       </div>
     </div>
@@ -90,14 +56,7 @@ const WindWid: React.FC<WindWidProps> = ({ speed, deg, gust }) => {
   const windData: WindData = { speed, deg, gust };
 
   return (
-    <div
-      style={{
-        minHeight: "10vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div style={{ minHeight: "10vh", display: "flex", justifyContent: "center", alignItems: "center", }}>
       <WindWidget wind={windData} />
     </div>
   );

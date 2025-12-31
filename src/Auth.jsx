@@ -76,7 +76,6 @@ export default function Auth({ onUser }) {
     
     try {
       if (isMobile) {
-        // Mobile → Redirect mode (works 100%)
         await signInWithRedirect(auth, provider);
       } else {
         // Desktop → Popup mode

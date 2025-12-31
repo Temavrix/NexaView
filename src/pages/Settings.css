@@ -1,16 +1,15 @@
 body {
     display: flex;
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    background-size: auto;
+    background-attachment: fixed;
     justify-content: center;
     align-items: center;
     height: 90vh;
     background-color: black;
     margin: 10;
     overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 @media (max-width: 1420px) {
@@ -131,4 +130,16 @@ button.react-calendar__tile.react-calendar__month-view__days__day {
 }
 .react-calendar__month-view__weekdays {
   color: white;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

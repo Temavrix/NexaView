@@ -9,6 +9,11 @@
 
 ## Our Project is now live: [NexaView](https://nexaview.netlify.app/)
 
+Please consider donating some money to our organization to help fund this project:  
+<a href="https://buymeacoffee.com/mahadhevha" target="_blank">
+    <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="30"/>
+</a>
+
 ## Built With:  <img width ="20" height="20" src="./src/pages/assets/react.svg"> + <img width="20" height="20" src="https://github.com/user-attachments/assets/06395346-45bf-4101-b176-245ab2825ca7"> + <img width="20" height="20" src="https://github.com/user-attachments/assets/8616be1a-d803-4ea7-808a-b19736af9de1"> + <img width="60" height="20" src="https://github.com/user-attachments/assets/b2ff8604-70e9-489c-9eb3-3d5d850169a3">
 
 **This Program Is CPU-Intensive Please Make Sure That You're Using A Mid To High Range PC.**
@@ -16,14 +21,15 @@
 ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgrading of Infrasturcture and Services) for users wishing to go back to the Vanilla Js version head to: [Commit 0b9d90](https://github.com/Temavrix/NexaView/tree/0b9d90cb93b83920100099202fe27f8b99fd7efa)
 
 ##### Desktop:
-<img width="200" alt="Image" src="https://github.com/user-attachments/assets/acb2cd97-49f1-45fd-8972-aea40672ad7c" /> 
-<img width="200" alt="Image" src="https://github.com/user-attachments/assets/bc734942-f077-45f3-9111-b736a6601f3f" /> 
-<img width="200" alt="Image" src="https://github.com/user-attachments/assets/7382748d-848f-4271-8bad-7a919e4de6ac" />
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/43f29e28-65f3-4375-9e9e-0f9cf7c63064" />
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/adeddd48-1e8e-4316-a419-846cb326fbe9" />
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/b9111d56-14c8-484e-99ba-36cf1a96d223" /> 
+
 
 ##### Mobile:
-<img width="80" alt="Image" src="https://github.com/user-attachments/assets/fe379479-7911-46a0-8896-6658a3b6496e" />
-<img width="80" alt="Image" src="https://github.com/user-attachments/assets/aec1af39-0981-4b63-97b2-c4165e98b417" />
-
+<img width="80" alt="Image" src="https://github.com/user-attachments/assets/f561a76e-76b4-4c71-81b4-2f52e709dee4" />
+<img width="80" alt="Image" src="https://github.com/user-attachments/assets/3ae38e9d-5f12-4248-b9c3-4233ef59929e" />
+<img width="80" alt="Image" src="https://github.com/user-attachments/assets/91ac3634-5352-47ad-857e-3f151d88a710" />
 
 
 
@@ -37,6 +43,7 @@ ATTENTION : This codebase has been updated in-line with Project-WrapSpeed (Upgra
    * [Private Firebase Database For Devs](#for-devs-who-want-to-have-a-private-firebase-database)
 - [Other Functions Available](#other-functions-available)
 - [Issues](#issues)
+- [Support Us](#support-us)
 - [License](#license)
 
 
@@ -45,39 +52,41 @@ Here at Temavrix we are committed in keeping NexaView up-to-date and up-to-speed
 
 
 ```
+NexaView Changelogs:-
+
 ANNOUNCEMENT:- 
 For the project's future: Our resources at Temavrix are diverted
 to other new projects so NexaView will be recieving updates less 
 often.
 
-We are planning to add more UI/UX changes and soon a page to make Donations 
-to help with our organisation's fundings.
-
-NexaView Changelogs:-
-
 QUALITY UPDATE:-
 
-1. Typescript Support:-
-1.1 Updated several files to Typescript under project WrapSpeed.
+1. REDIS Updates:-
+   1.1 With the successful implementation of Redis under project WrapSpeed 
+       we have now expanded it to store stock prices.
 
-2. REDIS Updates:-
-2.1 With the Successful implementation of Redis under project WrapSpeed 
-    for News Headlines we have expanded it to now help users get 
-    Current Weather and Forecast 
-2.2 Removed the need for users to register for GNewsAPI and 
-    OpenWeatherApi.
+2. New Calander Page:-
+   2.1 A new page which has a calander to help visualize tasks respective 
+       to it's completed date that its done on.
+   2.2 Ability to add new tasks and mark them completed if done.
+   2.3 Added extra fields in dataset when storing in firebase.
 
-3. Multi-Factor Authentication:-
-3.1 Added the option for users to Authenticate using 
-    their Google account to sign up and login.
-3.2 Added the option for users to Authenticate using 
-    their Github account to sign up and login.
-3.2 Improved Sign-up and Login page.
+3. New Features, Lesser Error Displays:-
+   3.1 A new map to display wind direction is now available in the Main 
+       dashboard powered by Windy.
+   3.2 Modify weather fetching logic to default to Singapore if no city is 
+       provided which removes "no city provided" error for first-timers.
+   3.3 New random background images to help users who have not registered 
+       to unsplash have more background choices and also now we have removed 
+       error pertaining to "no unsplash api" error for first-timers.
 
-4. UI/UX Changes:-
-4.1 Improved styling and responsiveness across various components.
-4.2 Improved Messaging, Signalling and Redirecting.
-4.3 New About-Us page!!!
+4. Donations And Support :3 
+   4.1 Added a new "BuyMeACoffee" button in our "About-us" page and README.md pages
+       which will help us to maintain our services and products.
+
+5. UI/UX Improvements:-
+   5.1 Improved styling and responsiveness across various components.
+   5.2 Improved Messaging, Signalling and Redirecting.
 
 NOTE: README.md Will be updated in the next update
 
@@ -88,7 +97,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 13-Novemeber-2025 19:50 HRS (Singapore Standard Time)
+Last Updated: 31-December-2025 18:55 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this repository.
@@ -203,6 +212,15 @@ Once users had registered their Apikeys in the settings page then the user's To-
 ## Issues
 As this project is still in constant development, if you run into any issues while operating or have any suggestions or features, please feel free to drop by our [issues](https://github.com/Temavrix/NexaView/issues) section and open a issue and we'll respond within 2-4 working days, Thank you for your understanding.
 
+## Support Us
+Please consider donating some money to our organization to help fund this project:  
+<a href="https://buymeacoffee.com/mahadhevha" target="_blank">
+    <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" height="30"/>
+</a>
+
+Or you can also support us in our web-app:  
+<img width="200" alt="Image" src="https://github.com/user-attachments/assets/6f37bdce-5292-4536-9156-fc0624240737" /> 
+
 ## License
 
 IMPORTANT NOTE: Any User who are willing to Share or Re-Distribute NexaView are kindly advised to:
@@ -215,7 +233,7 @@ This will be helpful for us as users will know it's original source and about ou
 Please also refer to LICENSE file for clarifications.  
 Thank you for your kind co-operation :-)
 
-NexaView Copyright (C) Temavrix 2025  
+NexaView Copyright (C) Temavrix 2026  
 All Rights Reserved
 
-Version 3.8.2
+Version 4.0

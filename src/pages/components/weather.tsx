@@ -1,5 +1,4 @@
 import { fetchApiConfig } from "../GetApis";
-
 const BASE_URL = (import.meta as any).env.VITE_API_BASE_URL as string;
 
 export async function fetchWeather(uid: string): Promise<any> {
@@ -10,12 +9,9 @@ export async function fetchWeather(uid: string): Promise<any> {
     } | null;
 
     const apiKey = config?.openWeatherKey;
-    const city = config?.city;
-
-    if (!city) {
-      throw new Error("Please Enter Your City!");
-    }
-
+    var city = config?.city;
+    if (!city) city="Singapore";
+    
     const response = await fetch(`${BASE_URL}/api/weather/${city}?apiKey=${apiKey}`);
 
     if (!response.ok) {

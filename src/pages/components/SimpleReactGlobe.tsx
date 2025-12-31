@@ -83,7 +83,6 @@ export default function EarthquakeGlobe(): JSX.Element {
 
   return (
     <div>
-      <br />
       <h3 className="text-white text-[1.17em] font-bold">
         Latest Natural Disasters
       </h3>
