@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { auth } from './firebase.jsx';
 import NexaView from "./pages/assets/NexaView.png";
 import Google from "./pages/assets/Googlelogo.png";

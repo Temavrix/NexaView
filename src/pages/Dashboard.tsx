@@ -5,7 +5,7 @@ import { fetchWeather } from "./components/weather";
 import { db } from "../firebase";
 import { fetchApiConfig } from "./GetApis";
 import "../index.css";
-import {collection, addDoc, getDocs, doc, updateDoc, DocumentData} from "firebase/firestore";
+import {collection, getDocs, DocumentData} from "firebase/firestore";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import WindWid from "./components/Wind";
 import HumidityWid from "./components/Humidity";
@@ -40,6 +40,7 @@ interface ForecastItem {
 interface Todo {
   id: string;
   task: string;
+  isCompleted: boolean;
 }
 
 const DashBoard: React.FC = () => {
@@ -48,10 +49,7 @@ const DashBoard: React.FC = () => {
   const [forecastData, setForecastData] = useState<ForecastItem[]>([]);
   const [user, setUser] = useState<User | null>(null);
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [coords, setCoords] = useState({
-    lat: 12.9716, // default Bangalore
-    lon: 77.5946,
-  });
+  const [coords, setCoords] = useState({lat: 12.9716, lon: 77.5946,});
 
   const backgrounds = [
     "https://images.unsplash.com/photo-1630387775844-b15d0f769972?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3",
@@ -115,7 +113,6 @@ const DashBoard: React.FC = () => {
         var city = config?.city;
         if (!city) city="Singapore";
         const countryKey = config?.unsplashApi;
-        if (!countryKey) throw alert("Unsplash API key is missing in Settings");
     
         const response = await fetch(`https://api.unsplash.com/photos/random?client_id=${countryKey}&query=${city}&count=1&orientation=landscape`);
         if (!response.ok) throw new Error("Error fetching image");
@@ -283,10 +280,7 @@ const DashBoard: React.FC = () => {
                     Sunset:{" "}
                     {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString(
                       [],
-                      {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      }
+                      {hour: "2-digit", minute: "2-digit",}
                     )}
                   </h4>
                 )}
@@ -319,11 +313,11 @@ const DashBoard: React.FC = () => {
           {/* 3rd column */}
           <div className="space-y-4">
             <div className="bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 text-[#d9d9d9] text-center p-4 sm:p-6 md:p-[2em] w-full max-w-full h-[40%] sm:h-[47%] overflow-y-auto no-scrollbar">
-                <h3 className="text-white text-[1.17em] font-bold"> All To-Do Tasks [2-months]</h3>
+                <h3 className="text-white text-[1.17em] font-bold"> Remaining To-Do Tasks</h3>
                 <div className="flex justify-center items-center">
                   <div className="w-full max-w-[500px] h-[700px] overflow-y-auto scrollbar-hide">
                     <ul className="text-white text-[1.17em] font-bold">
-                      {todos.map((todo) => (
+                      {todos.filter(task => task.isCompleted === false).map((todo) => (
                         <div key={todo.id} className="newscard border border-white/20 rounded-lg p-2 m-4 bg-white/10 backdrop-blur-md text-white" >
                           <li>
                             {todo.task}
@@ -343,7 +337,6 @@ const DashBoard: React.FC = () => {
                     width="100%"
                     height="100%"
                     src={`https://embed.windy.com/embed2.html?lat=${coords.lat}&lon=${coords.lon}&detailLat=${coords.lat}&detailLon=${coords.lon}&zoom=20&level=surface&overlay=wind&menu=&message=true&type=map&location=coordinates`}
-                    frameBorder="0"
                   />
               </div>
             </div>

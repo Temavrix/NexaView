@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { fetchApiConfig } from "../GetApis";
 
 const BASE_URL = (import.meta as any).env.VITE_API_BASE_URL as string;

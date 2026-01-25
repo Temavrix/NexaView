@@ -59,36 +59,19 @@ For the project's future: Our resources at Temavrix are diverted
 to other new projects so NexaView will be recieving updates less 
 often.
 
-QUALITY UPDATE:-
+1. MAJOR SECURITY PATCHES
+   1.1 React Router SSR XSS in ScrollRestoration [High]
 
-1. REDIS Updates:-
-   1.1 With the successful implementation of Redis under project WrapSpeed 
-       we have now expanded it to store stock prices.
+   1.2 React Router vulnerable to XSS via Open Redirects [High]
 
-2. New Calander Page:-
-   2.1 A new page which has a calander to help visualize tasks respective 
-       to it's completed date that its done on.
-   2.2 Ability to add new tasks and mark them completed if done.
-   2.3 Added extra fields in dataset when storing in firebase.
+   1.3 Preact has JSON VNode Injection issue [High]
 
-3. New Features, Lesser Error Displays:-
-   3.1 A new map to display wind direction is now available in the Main 
-       dashboard powered by Windy.
-   3.2 Modify weather fetching logic to default to Singapore if no city is 
-       provided which removes "no city provided" error for first-timers.
-   3.3 New random background images to help users who have not registered 
-       to unsplash have more background choices and also now we have removed 
-       error pertaining to "no unsplash api" error for first-timers.
+   1.3 Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions [Moderate]
 
-4. Donations And Support :3 
-   4.1 Added a new "BuyMeACoffee" button in our "About-us" page and README.md pages
-       which will help us to maintain our services and products.
+   1.4 React Router has unexpected external redirect via untrusted paths [Moderate]
 
-5. UI/UX Improvements:-
-   5.1 Improved styling and responsiveness across various components.
-   5.2 Improved Messaging, Signalling and Redirecting.
+   1.5 React Router has CSRF issue in Action/Server Action Request Processing [Moderate]
 
-NOTE: README.md Will be updated in the next update
 
 Code Checks Manifest:-
 All Checks Status: ✅
@@ -97,7 +80,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 31-December-2025 18:55 HRS (Singapore Standard Time)
+Last Updated: 25-January-2025 14:30 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this repository.

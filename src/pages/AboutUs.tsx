@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Sidebar from "./components/Sidebar";
 import { signOut, getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
