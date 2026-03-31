@@ -55,22 +55,20 @@ Here at Temavrix we are committed in keeping NexaView up-to-date and up-to-speed
 NexaView Changelogs:-
 
 ANNOUNCEMENT:- 
-For the project's future: Our resources at Temavrix are diverted
-to other new projects so NexaView will be recieving updates less 
-often.
+For the project's future: Our resources at Temavrix are currently diverted to other new projects and endeavours hence NexaView will be currently recieving important Security patches if needed.
 
 1. MAJOR SECURITY PATCHES
-   1.1 React Router SSR XSS in ScrollRestoration [High]
+   1.1 Rollup 4 has Arbitrary File Write via Path Traversal [High]
 
-   1.2 React Router vulnerable to XSS via Open Redirects [High]
+   1.2 Prototype Pollution via parse() in NodeJS flatted [High]
 
-   1.3 Preact has JSON VNode Injection issue [High]
+   1.3 minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern [High]
 
-   1.3 Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions [Moderate]
+   1.3 Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig [High]
 
-   1.4 React Router has unexpected external redirect via untrusted paths [Moderate]
+   1.4 minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions [High]
 
-   1.5 React Router has CSRF issue in Action/Server Action Request Processing [Moderate]
+   1.5 flatted vulnerable to unbounded recursion DoS in parse() revive phase [High]
 
 
 Code Checks Manifest:-
@@ -80,7 +78,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 25-January-2025 14:30 HRS (Singapore Standard Time)
+Last Updated: 31-March-2026 13:50 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this repository.
