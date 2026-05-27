@@ -90,8 +90,7 @@ export default function Auth({ onUser }) {
 
 
   return (
-    <div
-      className="min-h-screen w-full bg-gradient-to-br from-black to-gray-600 text-white overflow-hidden fixed inset-0"
+    <div className="min-h-screen w-full bg-gradient-to-br from-black to-gray-600 text-white h-screen no-scrollbar scrollbar-hide overflow-x-hidden fixed inset-0"
       style={{ overscrollBehavior: "none", WebkitOverflowScrolling: "auto" }}>
 
       {/* Sidebar */}
@@ -105,7 +104,7 @@ export default function Auth({ onUser }) {
       </div>
 
       {/* Main Content */}
-      <div className="ml-[60px] sm:mt-50 sm:ml-[80px] h-[797px] flex items-center justify-center max-h-screen p-4">
+      <div className="ml-[60px] sm:mt-50 sm:ml-[80px] h-[797px] flex items-center justify-center p-4">
         <div className="w-full max-w-md bg-white/10 backdrop-blur-md shadow-lg border border-white/20 rounded-3xl p-8 sm:p-12 text-center">
           <h1 className="text-2xl sm:text-3xl font-bold mb-4">NexaView</h1>
           <h2 className="text-2xl sm:text-3xl  mb-8">

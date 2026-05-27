@@ -55,20 +55,11 @@ Here at Temavrix we are committed in keeping NexaView up-to-date and up-to-speed
 NexaView Changelogs:-
 
 ANNOUNCEMENT:- 
-For the project's future: Our resources at Temavrix are currently diverted to other new projects and endeavours hence NexaView will be currently recieving important Security patches if needed.
+For the project's future: Our resources at Temavrix are currently diverted to other new projects and endeavours hence NexaView will be currently recieving important Security patches and urgent patches if needed.
 
 1. MAJOR SECURITY PATCHES
-   1.1 Rollup 4 has Arbitrary File Write via Path Traversal [High]
 
-   1.2 Prototype Pollution via parse() in NodeJS flatted [High]
-
-   1.3 minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern [High]
-
-   1.3 Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig [High]
-
-   1.4 minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions [High]
-
-   1.5 flatted vulnerable to unbounded recursion DoS in parse() revive phase [High]
+2. Added the ability to scroll in the login/register page to prevent form cutoff.
 
 
 Code Checks Manifest:-
@@ -78,7 +69,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 31-March-2026 13:50 HRS (Singapore Standard Time)
+Last Updated: 27-May-2026 15:05 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this repository.
@@ -142,9 +133,7 @@ Apart from APIs to retreive information NexaView also comes with some more funct
 NexaView allows you to track tasks which will be stored in FireBase to prevent erasure of tasks if you exit or if you had reloaded the page.  
    <img width="100"  alt="Image" src="https://github.com/user-attachments/assets/2c0ad27d-d79d-43e3-8324-a954ee306e75" />
    
-2. Calender:  
-NexaView has an in-built calander.  
-   <img width="150" alt="Image" src="https://github.com/user-attachments/assets/a9877bd8-208a-4cd2-bee1-b5a91c307b93" />
+2. Calender
 
 3. Latest Natural Disasters:  
 You can visualize recent natural disasters with the help of a globe.  
