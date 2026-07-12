@@ -168,7 +168,7 @@ function CalaBoard(){
                 <Sidebar handleLogout={handleLogout} />
 
                 <div className="grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 w-full">
-                  <div className='lg:min-w-[850px]'>
+                  <div className='lg:min-w-[50px]'>
 
                     <div className="text-white text-[1.17em] font-bold bg-black/35 backdrop-blur-[10px] shadow-lg border border-white/20 sm:h-[460px] h-[480px] text-center p-3">
                         <Calendar

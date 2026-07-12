@@ -1,13 +1,11 @@
-# NexaView <img width ="30" height="30" src="https://user-images.githubusercontent.com/69076784/236990283-83859a95-c9fa-4d2a-8729-4afb3900789d.png">
+# NexaView <img height="20" src="https://user-images.githubusercontent.com/69076784/236990283-83859a95-c9fa-4d2a-8729-4afb3900789d.png">
 
-## Current Status : [![Netlify Status](https://api.netlify.com/api/v1/badges/8214a672-052e-407c-9c7d-0300b4294f53/deploy-status)](https://app.netlify.com/projects/nexaview/deploys)
+## Our Project is now [live](https://nexaview.netlify.app/) current Status : [![Netlify Status](https://api.netlify.com/api/v1/badges/8214a672-052e-407c-9c7d-0300b4294f53/deploy-status)](https://app.netlify.com/projects/nexaview/deploys)
 
 ###### An All In One Web based Dashboard For News, Weathers and More...
 
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/Temavrix/NexaView) [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](https://github.com/Temavrix/NexaView) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/Temavrix/NexaView/issues)
 
-## Our Project is now live: [NexaView](https://nexaview.netlify.app/)
 
 Please consider donating some money to our organization to help fund this project:  
 <a href="https://buymeacoffee.com/mahadhevha" target="_blank">
@@ -58,8 +56,8 @@ ANNOUNCEMENT:-
 For the project's future: Our resources at Temavrix are currently diverted to other new projects and endeavours hence NexaView will be currently recieving important Security patches and urgent patches if needed.
 
 1. MAJOR SECURITY PATCHES
-
-2. Added the ability to scroll in the login/register page to prevent form cutoff.
+2. Fixed Calander bug.
+3. Backend changes
 
 
 Code Checks Manifest:-
@@ -69,7 +67,7 @@ UX (User Experience) Checks: ✅
 BackEnd Code-FrontEnd UI Integration Checks: ✅
 (All evaluations are done by the R&D Department)
 
-Last Updated: 27-May-2026 15:05 HRS (Singapore Standard Time)
+Last Updated: 12-July-2026 15:20 HRS (Singapore Standard Time)
 Publisher: Temavrix
 ```
 Keep up-to-date with what's happening on this repository by clicking the 'Star' and 'Watch' button on the top right corner of this repository.
